@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg-saintseiyaawakening" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="accent-saintseiyaawakening" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fda4af" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="glow-saintseiyaawakening" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#fda4af" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#fda4af" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="textShadow-saintseiyaawakening" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
+    <clipPath id="roundClip">
+      <rect width="512" height="512" rx="48" ry="48"/>
+    </clipPath>
+    <pattern id="pattern-saintseiyaawakening" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#9f1239" stroke-width="1" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- Base shape with rounded corners -->
+  <rect width="512" height="512" rx="48" ry="48" fill="#e11d48"/>
+
+  <g clip-path="url(#roundClip)">
+    <!-- Main gradient background -->
+    <rect width="512" height="512" fill="url(#bg-saintseiyaawakening)"/>
+
+    <!-- Decorative background shapes -->
+    <polygon points="90.09549882328189,70.5 90.09549882328189,129.5 39.00000000000001,159 -12.095498823281886,129.5 -12.095498823281893,70.50000000000001 38.999999999999936,41" fill="#fda4af" opacity="0.13"/><rect x="10" y="70" width="60" height="60" rx="4" fill="#fda4af" opacity="0.13" transform="rotate(45 40 100)"/><circle cx="41" cy="100" r="61" fill="#fda4af" opacity="0.13"/>
+
+    <!-- Large soft glow -->
+    <ellipse cx="256" cy="220" rx="220" ry="180" fill="url(#glow-saintseiyaawakening)"/>
+
+    <!-- Pattern overlay -->
+    <rect width="512" height="512" fill="url(#pattern-saintseiyaawakening)"/>
+
+    <!-- Secondary gradient accent strip -->
+    <rect x="0" y="380" width="512" height="132" fill="url(#accent-saintseiyaawakening)" opacity="0.3"/>
+
+    <!-- Subtle corner accent -->
+    <circle cx="512" cy="0" r="160" fill="white" opacity="0.04"/>
+    <circle cx="0" cy="512" r="120" fill="black" opacity="0.08"/>
+
+    <!-- Main initials text -->
+    <text x="256" y="240" text-anchor="middle" dominant-baseline="central"
+      font-family="'SF Pro Display', 'Inter', 'Segoe UI', Arial, sans-serif"
+      font-size="110"
+      font-weight="800"
+      fill="white"
+      letter-spacing="4"
+      filter="url(#textShadow-saintseiyaawakening)"
+      transform="rotate(-16, 256, 240)">
+      SSA
+    </text>
+
+    <!-- Category label bar -->
+    <rect x="140" y="380" width="232" height="36" rx="18" fill="black" opacity="0.3"/>
+    <text x="256" y="398" text-anchor="middle" dominant-baseline="central"
+      font-family="'SF Pro Text', 'Inter', 'Segoe UI', Arial, sans-serif"
+      font-size="13" font-weight="600"
+      fill="white" opacity="0.9"
+      letter-spacing="2">
+      ACTION
+    </text>
+
+    <!-- Game name at bottom -->
+    <text x="256" y="450" text-anchor="middle" dominant-baseline="central"
+      font-family="'SF Pro Text', 'Inter', 'Segoe UI', Arial, sans-serif"
+      font-size="16" font-weight="500"
+      fill="white" opacity="0.8"
+      letter-spacing="0.5">
+      Saint Seiya: Awakening
+    </text>
+
+    <!-- Top highlight border -->
+    <rect x="0" y="0" width="512" height="3" fill="white" opacity="0.2"/>
+  </g>
+
+  <!-- Outer border for polish -->
+  <rect width="512" height="512" rx="48" ry="48" fill="none" stroke="white" stroke-width="1" opacity="0.1"/>
+</svg>

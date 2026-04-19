@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg-sevenknights2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="accent-sevenknights2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fda4af" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="glow-sevenknights2" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#fda4af" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#fda4af" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="textShadow-sevenknights2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
+    <clipPath id="roundClip">
+      <rect width="512" height="512" rx="48" ry="48"/>
+    </clipPath>
+    <pattern id="pattern-sevenknights2" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M0 0L16 16M16 0L0 16" stroke="#9f1239" stroke-width="0.5" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <!-- Base shape with rounded corners -->
+  <rect width="512" height="512" rx="48" ry="48" fill="#e11d48"/>
+
+  <g clip-path="url(#roundClip)">
+    <!-- Main gradient background -->
+    <rect width="512" height="512" fill="url(#bg-sevenknights2)"/>
+
+    <!-- Decorative background shapes -->
+    <rect x="29.5" y="-91.5" width="99" height="99" rx="4" fill="#fda4af" opacity="0.1" transform="rotate(45 79 -42)"/><polygon points="162.870489570875,-91 162.870489570875,6.999999999999993 78,56 -6.8704895708749945,6.999999999999993 -6.870489570875009,-90.99999999999997 77.9999999999999,-140" fill="#fda4af" opacity="0.1"/><circle cx="77" cy="-42" r="97" fill="#fda4af" opacity="0.1"/><rect x="28" y="-90" width="96" height="96" rx="4" fill="#fda4af" opacity="0.1" transform="rotate(45 76 -42)"/><polygon points="157.2724133595217,-89.5 157.2724133595217,5.499999999999993 75,53 -7.2724133595216784,5.499999999999993 -7.272413359521693,-89.49999999999997 74.9999999999999,-137" fill="#fda4af" opacity="0.1"/>
+
+    <!-- Large soft glow -->
+    <ellipse cx="256" cy="220" rx="220" ry="180" fill="url(#glow-sevenknights2)"/>
+
+    <!-- Pattern overlay -->
+    <rect width="512" height="512" fill="url(#pattern-sevenknights2)"/>
+
+    <!-- Secondary gradient accent strip -->
+    <rect x="0" y="380" width="512" height="132" fill="url(#accent-sevenknights2)" opacity="0.3"/>
+
+    <!-- Subtle corner accent -->
+    <circle cx="512" cy="0" r="160" fill="white" opacity="0.04"/>
+    <circle cx="0" cy="512" r="120" fill="black" opacity="0.08"/>
+
+    <!-- Main initials text -->
+    <text x="256" y="240" text-anchor="middle" dominant-baseline="central"
+      font-family="'SF Pro Display', 'Inter', 'Segoe UI', Arial, sans-serif"
+      font-size="110"
+      font-weight="800"
+      fill="white"
+      letter-spacing="4"
+      filter="url(#textShadow-sevenknights2)"
+      transform="rotate(-10, 256, 240)">
+      SK2
+    </text>
+
+    <!-- Category label bar -->
+    <rect x="140" y="380" width="232" height="36" rx="18" fill="black" opacity="0.3"/>
+    <text x="256" y="398" text-anchor="middle" dominant-baseline="central"
+      font-family="'SF Pro Text', 'Inter', 'Segoe UI', Arial, sans-serif"
+      font-size="13" font-weight="600"
+      fill="white" opacity="0.9"
+      letter-spacing="2">
+      ACTION
+    </text>
+
+    <!-- Game name at bottom -->
+    <text x="256" y="450" text-anchor="middle" dominant-baseline="central"
+      font-family="'SF Pro Text', 'Inter', 'Segoe UI', Arial, sans-serif"
+      font-size="16" font-weight="500"
+      fill="white" opacity="0.8"
+      letter-spacing="0.5">
+      Seven Knights 2
+    </text>
+
+    <!-- Top highlight border -->
+    <rect x="0" y="0" width="512" height="3" fill="white" opacity="0.2"/>
+  </g>
+
+  <!-- Outer border for polish -->
+  <rect width="512" height="512" rx="48" ry="48" fill="none" stroke="white" stroke-width="1" opacity="0.1"/>
+</svg>

@@ -299,10 +299,11 @@ function HeroSlider() {
 // ─── Game Card Component ───────────────────────────────────
 function GameCard({ game, index }: { game: Game; index: number }) {
   const { setSelectedGame, setCurrentView } = useStore()
+  const [imgError, setImgError] = useState(false)
   const handleClick = () => { setSelectedGame(game); setCurrentView('game'); window.scrollTo({ top: 0, behavior: 'smooth' }) }
   const minPrice = game.nominals.length > 0 ? Math.min(...game.nominals.map(n => n.price)) : 0
   const hasDiscount = game.nominals.some(n => n.originalPrice && n.originalPrice > n.price)
-  const hasImage = game.image && isImageUrl(game.image)
+  const hasImage = game.image && isImageUrl(game.image) && !imgError
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.5) }}>
@@ -310,7 +311,7 @@ function GameCard({ game, index }: { game: Game; index: number }) {
         <CardContent className="p-0">
           <div className={`relative h-28 sm:h-32 bg-gradient-to-br ${getCategoryColor(game.category)} flex items-center justify-center overflow-hidden`}>
             {hasImage ? (
-              <Image src={game.image} alt={game.name} fill className="object-cover" unoptimized />
+              <Image src={game.image} alt={game.name} fill className="object-cover" unoptimized onError={() => setImgError(true)} />
             ) : (
               <span className="text-4xl sm:text-5xl filter drop-shadow-lg">{getCategoryEmoji(game.category)}</span>
             )}
@@ -394,6 +395,7 @@ function TopUpForm() {
   } = useStore()
   const [copiedDana, setCopiedDana] = useState(false)
   const [orderSuccess, setOrderSuccess] = useState(false)
+  const [detailImgError, setDetailImgError] = useState(false)
 
   if (!selectedGame) return null
 
@@ -467,7 +469,7 @@ function TopUpForm() {
     )
   }
 
-  const gameHasImage = selectedGame.image && isImageUrl(selectedGame.image)
+  const gameHasImage = selectedGame.image && isImageUrl(selectedGame.image) && !detailImgError
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
@@ -482,7 +484,7 @@ function TopUpForm() {
             <div className="relative flex items-center gap-4">
               {gameHasImage ? (
                 <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center overflow-hidden shrink-0">
-                  <Image src={selectedGame.image} alt={selectedGame.name} width={64} height={64} className="object-cover rounded-xl" unoptimized />
+                  <Image src={selectedGame.image} alt={selectedGame.name} width={64} height={64} className="object-cover rounded-xl" unoptimized onError={() => setDetailImgError(true)} />
                 </div>
               ) : (
                 <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl shrink-0">{getCategoryEmoji(selectedGame.category)}</div>
