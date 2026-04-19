@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<!--
+  ZallTopUp - Static HTML Version for GitHub Pages
+  NOTE: This is a static copy for SEO & GitHub Pages deployment.
+  For full functionality (ordering, admin, real-time), use the Next.js server version.
+  All game images referenced from /games/{slug}.png — these files must exist in the repo root or public/ folder.
+-->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZallTopUp — Top Up Game Termurah & Terpercaya | 65+ Game Indonesia</title>
+<meta name="description" content="ZallTopUp adalah situs top up game online termurah dan terpercaya di Indonesia. Tersedia 65+ game populer: Mobile Legends, Free Fire, PUBG Mobile, Valorant, Genshin Impact, dan masih banyak lagi. Proses cepat 1-15 menit via DANA.">
+<meta name="keywords" content="top up game, top up murah, top up ML, top up Free Fire, top up PUBG, top up Valorant, top up Genshin Impact, ZallTopUp, top up game Indonesia, diamond murah, UC murah, VP murah">
+<meta name="author" content="ZallTopUp">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://zalltopup.github.io/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="manifest" href="manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZallTopUp — Top Up Game Termurah & Terpercaya">
+<meta property="og:description" content="Top up 65+ game populer termurah di Indonesia. Mobile Legends, Free Fire, PUBG, Valorant, Genshin Impact dan lainnya. Proses cepat via DANA!">
+<meta property="og:url" content="https://zalltopup.github.io/">
+<meta property="og:image" content="https://zalltopup.github.io/banners/mlbb-diamond-sale.png">
+<meta property="og:site_name" content="ZallTopUp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZallTopUp — Top Up Game Termurah & Terpercaya">
+<meta name="twitter:description" content="Top up 65+ game populer termurah di Indonesia. Proses cepat via DANA!">
+<meta name="twitter:image" content="https://zalltopup.github.io/banners/mlbb-diamond-sale.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{scrollbar-width:thin;scrollbar-color:#cbd5e1 transparent}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:99px}
+.scrollbar-hide::-webkit-scrollbar{display:none}
+.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}
+.line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(100px);scale:.9}to{opacity:1;transform:translateX(0);scale:1}}
+@keyframes slideOutRight{from{opacity:1;transform:translateX(0);scale:1}to{opacity:0;transform:translateX(100px);scale:.9}}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+.anim-fade-up{animation:fadeInUp .5s ease-out forwards;opacity:0}
+.anim-slide-in{animation:slideInRight .4s ease-out forwards}
+.anim-slide-out{animation:slideOutRight .3s ease-in forwards}
+.game-card{transition:all .3s ease}
+.game-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -12px rgba(0,0,0,.1)}
+.game-card:hover .game-overlay{opacity:1}
+.game-card:hover .game-btn{transform:scale(1)}
+.game-overlay{opacity:0;transition:opacity .3s}
+.game-btn{transform:scale(.85);transition:transform .3s}
+html{scroll-behavior:smooth}
+</style>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebSite","name":"ZallTopUp","url":"https://zalltopup.github.io/",
+  "description":"Situs top up game online termurah dan terpercaya di Indonesia dengan 65+ game tersedia.",
+  "potentialAction":{"@type":"SearchAction","target":"https://zalltopup.github.io/?q={search_term_string}","query-input":"required name=search_term_string"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Organization","name":"ZallTopUp","url":"https://zalltopup.github.io/",
+  "logo":"https://zalltopup.github.io/logo.png","sameAs":[],
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":"Indonesian"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Bagaimana cara top up game di ZallTopUp?","acceptedAnswer":{"@type":"Answer","text":"Pilih game, masukkan ID pemain, pilih nominal, lalu bayar via DANA. Pesanan diproses 1-15 menit."}},
+    {"@type":"Question","name":"Metode pembayaran apa saja yang tersedia?","acceptedAnswer":{"@type":"Answer","text":"ZallTopUp menerima pembayaran melalui DANA transfer ke nomor 0851693007731 a.n zallhostinger."}},
+    {"@type":"Question","name":"Berapa lama proses top up setelah pembayaran?","acceptedAnswer":{"@type":"Answer","text":"Proses top up biasanya 1-15 menit setelah pembayaran dikonfirmasi. Maksimal 30 menit."}},
+    {"@type":"Question","name":"Game apa saja yang tersedia di ZallTopUp?","acceptedAnswer":{"@type":"Answer","text":"Tersedia 65+ game populer: Mobile Legends, Free Fire, PUBG Mobile, Valorant, Genshin Impact, Honkai Star Rail, Clash of Clans, dll."}},
+    {"@type":"Question","name":"Apakah ZallTopUp aman dan terpercaya?","acceptedAnswer":{"@type":"Answer","text":"Ya! ZallTopUp terpercaya dengan ratusan transaksi berhasil setiap harinya dan admin online 24 jam."}},
+    {"@type":"Question","name":"Bagaimana cara cek status pesanan?","acceptedAnswer":{"@type":"Answer","text":"Gunakan menu Cek Pesanan di website. Masukkan nama atau ID pemesanan untuk melihat status real-time."}},
+    {"@type":"Question","name":"Apa yang harus dilakukan jika top up belum masuk?","acceptedAnswer":{"@type":"Answer","text":"Hubungi admin via WhatsApp dengan Order ID jika top up belum masuk setelah 30 menit."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"ItemList","name":"Daftar Game Top Up ZallTopUp",
+  "description":"Daftar lengkap 65+ game yang tersedia untuk top up di ZallTopUp",
+  "numberOfItems":65,"itemListElement":[
+    {"@type":"ListItem","position":1,"name":"PUBG Mobile","url":"https://zalltopup.github.io/#games"},
+    {"@type":"ListItem","position":2,"name":"Free Fire","url":"https://zalltopup.github.io/#games"},
+    {"@type":"ListItem","position":3,"name":"Mobile Legends: Bang Bang","url":"https://zalltopup.github.io/#games"},
+    {"@type":"ListItem","position":4,"name":"Genshin Impact","url":"https://zalltopup.github.io/#games"},
+    {"@type":"ListItem","position":5,"name":"Honkai: Star Rail","url":"https://zalltopup.github.io/#games"},
+    {"@type":"ListItem","position":6,"name":"Call of Duty Mobile","url":"https://zalltopup.github.io/#games"},
+    {"@type":"ListItem","position":7,"name":"Valorant","url":"https://zalltopup.github.io/#games"},
+    {"@type":"ListItem","position":8,"name":"Clash of Clans","url":"https://zalltopup.github.io/#games"}
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 font-sans text-slate-900 antialiased">
+
+<!-- ==================== HEADER ==================== -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" class="flex items-center gap-2 group">
+        <img src="logo.png" alt="ZallTopUp" width="36" height="36" class="rounded-lg shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-shadow">
+        <div class="flex flex-col">
+          <span class="text-lg font-bold text-white leading-none tracking-tight">Zall<span class="text-blue-400">TopUp</span></span>
+          <span class="text-[10px] text-blue-300/70 leading-none">Game Top Up Murah</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#games" class="text-sm text-slate-300 hover:text-white transition-colors flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Games
+        </a>
+        <a href="#faq" class="text-sm text-slate-300 hover:text-white transition-colors flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          FAQ
+        </a>
+      </nav>
+      <div class="hidden sm:flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-3 py-1.5">
+        <div class="w-2 h-2 rounded-full bg-green-400" style="animation:pulse-dot 2s infinite"></div>
+        <span id="onlineCount" class="text-xs text-green-400 font-medium">847 online</span>
+      </div>
+      <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-white p-2">
+        <svg id="menuIcon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="closeIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden bg-slate-900/98 backdrop-blur-md border-t border-white/5">
+    <div class="px-4 py-3 space-y-2">
+      <a href="#games" onclick="closeMobileMenu()" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white py-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Games
+      </a>
+      <a href="#leaderboard" onclick="closeMobileMenu()" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white py-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        Leaderboard
+      </a>
+      <a href="#faq" onclick="closeMobileMenu()" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white py-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        FAQ
+      </a>
+      <div class="flex items-center gap-2 pt-1">
+        <div class="w-2 h-2 rounded-full bg-green-400" style="animation:pulse-dot 2s infinite"></div>
+        <span class="text-xs text-green-400" id="onlineCountMobile">847 user online</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== SOCIAL PROOF NOTIFICATIONS ==================== -->
+<div id="notifications" class="fixed top-20 right-4 z-[60] flex flex-col gap-2 pointer-events-none" style="max-width:320px"></div>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<main class="pt-16 min-h-screen flex flex-col">
+
+  <!-- HERO BANNER SLIDER -->
+  <section class="w-full mt-4 mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/20">
+      <div class="relative h-48 sm:h-64 md:h-80" id="slider">
+        <!-- Slides injected by JS -->
+      </div>
+      <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/30 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-colors backdrop-blur-sm z-10">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/30 hover:bg-black/50 rounded-full flex items-center justify-center text-white transition-colors backdrop-blur-sm z-10">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <div id="sliderDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
+    </div>
+  </section>
+
+  <!-- GAME GRID SECTION -->
+  <section id="games" class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <!-- Search -->
+    <div class="relative mb-6">
+      <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input id="searchInput" type="text" placeholder="Cari game favorit kamu..." oninput="filterGames()" class="w-full pl-12 pr-12 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 h-12 outline-none transition-all">
+      <button id="clearSearch" onclick="clearSearchInput()" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 hidden">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex items-center gap-2 mb-6 overflow-x-auto pb-2 scrollbar-hide" id="categoryTabs"></div>
+
+    <!-- Popular Games -->
+    <div id="popularSection" class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        <h2 class="text-xl font-bold text-slate-900">Game Populer</h2>
+        <div class="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+      </div>
+      <div id="popularGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"></div>
+    </div>
+
+    <!-- All Games -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h2 class="text-xl font-bold text-slate-900" id="allGamesTitle">Semua Game (65)</h2>
+        <div class="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+      </div>
+      <div id="allGamesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"></div>
+      <div id="noResults" class="hidden text-center py-16">
+        <svg class="w-12 h-12 text-slate-300 mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <p class="text-slate-400">Game tidak ditemukan</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP 10 BUYERS LEADERBOARD -->
+  <section id="leaderboard" class="max-w-7xl mx-auto px-4 sm:px-6 pb-12">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-4 sm:p-5">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          <h2 class="text-base sm:text-lg font-bold text-white">&#127942; Top 10 Pembeli Terbanyak Hari Ini</h2>
+        </div>
+        <p class="text-xs text-slate-400 mt-1">Leaderboard pembelian real-time</p>
+      </div>
+      <div class="divide-y divide-slate-100" id="leaderboardBody"></div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-3">
+        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="text-sm font-medium text-blue-700">FAQ</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Pertanyaan yang Sering Ditanyakan</h2>
+      <p class="text-slate-500 text-sm max-w-lg mx-auto">Temukan jawaban untuk pertanyaan umum seputar top up game di ZallTopUp</p>
+    </div>
+    <div class="space-y-3" id="faqList"></div>
+  </section>
+
+  <!-- SEO CONTENT SECTION -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+      <div class="bg-gradient-to-r from-slate-900 to-blue-950 p-6 sm:p-8">
+        <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">ZallTopUp — Tempat Top Up Game Termurah dan Terpercaya di Indonesia</h2>
+        <p class="text-slate-300 text-sm leading-relaxed">ZallTopUp adalah situs top up game online terpercaya yang menyediakan layanan isi ulang diamond, UC, VP, dan item game lainnya dengan harga termurah. Tersedia untuk 65+ game populer termasuk Mobile Legends Bang Bang, Free Fire, PUBG Mobile, Valorant, Genshin Impact, Honkai Star Rail, Clash of Clans, dan masih banyak lagi.</p>
+      </div>
+      <div class="p-6 sm:p-8">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Kenapa Memilih ZallTopUp?</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Harga termurah mulai dari Rp3.300</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Proses cepat 1-15 menit</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Pembayaran mudah via DANA</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Admin online 24 jam</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 65+ game tersedia</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Game Populer</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Top up Mobile Legends diamond, Free Fire diamond dan membership, PUBG Mobile UC, Valorant VP, Genshin Impact Genesis Crystal dan Welkin Moon, Honkai Star Rail Shard, Clash of Clans Gems, dan ratusan item game lainnya. Semua tersedia dengan harga bersaing dan proses instan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT INFO -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+    <div class="bg-gradient-to-br from-[#108EE9] to-[#0066CC] rounded-2xl p-6 sm:p-8 text-white shadow-xl shadow-blue-500/20">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+          <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="white" fill-opacity="0.3"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">D</text></svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold">Pembayaran via DANA</h3>
+          <p class="text-sm text-white/80">Transfer instan, langsung diproses</p>
+        </div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-between">
+        <div>
+          <p class="text-xs text-white/60 mb-1">Nomor DANA</p>
+          <p class="text-lg font-mono font-bold tracking-wider">0851693007731</p>
+          <p class="text-xs text-white/60 mt-1">a.n <span class="font-medium text-white/90">zallhostinger</span></p>
+        </div>
+        <button onclick="copyDana()" id="copyBtn" class="bg-white text-[#108EE9] px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-white/90 transition-colors shrink-0 ml-4">
+          <span id="copyText">Salin</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-slate-900 text-white mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="logo.png" alt="ZallTopUp" width="32" height="32" class="rounded-lg">
+          <span class="text-lg font-bold">Zall<span class="text-blue-400">TopUp</span></span>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed">Situs top up game online termurah dan terpercaya di Indonesia. Tersedia 65+ game populer dengan proses cepat.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-sm uppercase tracking-wider text-slate-300">Game Populer</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#games" class="hover:text-white transition-colors">Mobile Legends</a></li>
+          <li><a href="#games" class="hover:text-white transition-colors">Free Fire</a></li>
+          <li><a href="#games" class="hover:text-white transition-colors">PUBG Mobile</a></li>
+          <li><a href="#games" class="hover:text-white transition-colors">Valorant</a></li>
+          <li><a href="#games" class="hover:text-white transition-colors">Genshin Impact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-sm uppercase tracking-wider text-slate-300">Informasi</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#leaderboard" class="hover:text-white transition-colors">Leaderboard</a></li>
+          <li><span class="text-slate-500">Kebijakan Privasi</span></li>
+          <li><span class="text-slate-500">Syarat & Ketentuan</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-sm uppercase tracking-wider text-slate-300">Pembayaran</h4>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="bg-[#108EE9] rounded-lg px-3 py-1.5 text-xs font-bold">DANA</div>
+        </div>
+        <p class="text-xs text-slate-500">Admin online 24/7 untuk memproses pesanan Anda</p>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-slate-500">&copy; 2025 ZallTopUp. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <span class="text-slate-500 hover:text-white transition-colors cursor-pointer" title="Instagram">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </span>
+        <span class="text-slate-500 hover:text-white transition-colors cursor-pointer" title="TikTok">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.28 8.28 0 005.58 2.17V11.7a4.83 4.83 0 01-3.77-1.85V6.69z"/></svg>
+        </span>
+        <span class="text-slate-500 hover:text-white transition-colors cursor-pointer" title="YouTube">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// ALL 65 GAMES DATA
+// ============================================================
+const GAMES = [
+  // BATTLE ROYALE
+  {name:"PUBG Mobile",slug:"pubg-mobile",category:"Battle Royale",popular:true,nominals:[{n:"60 UC",p:15000},{n:"325 UC",p:75000},{n:"660 UC",p:150000},{n:"1080 UC",p:239000},{n:"1800 UC",p:390000},{n:"2700 UC",p:575000},{n:"3850 UC",p:790000},{n:"5400 UC",p:1050000},{n:"6750 UC",p:1290000},{n:"8100 UC",p:1590000},{n:"10800 UC",p:2100000},{n:"13500 UC",p:2590000}]},
+  {name:"Free Fire",slug:"free-fire",category:"Battle Royale",popular:true,nominals:[{n:"100 Diamonds",p:15000},{n:"310 Diamonds",p:46000},{n:"520 Diamonds",p:77000},{n:"790 Diamonds",p:115000},{n:"1060 Diamonds",p:153000},{n:"1500 Diamonds",p:215000},{n:"2180 Diamonds",p:307000},{n:"2800 Diamonds",p:390000},{n:"3800 Diamonds",p:525000},{n:"5600 Diamonds",p:768000},{n:"7800 Diamonds",p:1050000},{n:"10800 Diamonds",p:1440000}]},
+  {name:"Call of Duty Mobile",slug:"call-of-duty-mobile",category:"Battle Royale",popular:true,nominals:[{n:"80 CP",p:15000},{n:"200 CP",p:37000},{n:"400 CP",p:75000},{n:"800 CP",p:145000},{n:"1200 CP",p:215000},{n:"2000 CP",p:355000},{n:"2800 CP",p:489000},{n:"4000 CP",p:695000},{n:"5600 CP",p:949000},{n:"7200 CP",p:1190000},{n:"8400 CP",p:1390000}]},
+  {name:"Apex Legends Mobile",slug:"apex-legends-mobile",category:"Battle Royale",popular:false,nominals:[{n:"100 Coins",p:15000},{n:"300 Coins",p:43000},{n:"500 Coins",p:70000},{n:"700 Coins",p:96000},{n:"1000 Coins",p:135000},{n:"1500 Coins",p:199000},{n:"2500 Coins",p:325000},{n:"3500 Coins",p:449000},{n:"5000 Coins",p:635000},{n:"7500 Coins",p:939000},{n:"10000 Coins",p:1239000}]},
+  {name:"Farlight 84",slug:"farlight-84",category:"Battle Royale",popular:false,nominals:[{n:"100 Diamonds",p:16000},{n:"300 Diamonds",p:47000},{n:"600 Diamonds",p:92000},{n:"900 Diamonds",p:135000},{n:"1200 Diamonds",p:179000},{n:"1800 Diamonds",p:265000},{n:"2400 Diamonds",p:349000},{n:"3600 Diamonds",p:519000},{n:"4800 Diamonds",p:689000},{n:"6000 Diamonds",p:859000},{n:"9600 Diamonds",p:1359000}]},
+  // MOBA
+  {name:"Mobile Legends: Bang Bang",slug:"mobile-legends-bang-bang",category:"MOBA",popular:true,nominals:[{n:"11 Diamonds",p:3300},{n:"22 Diamonds",p:6600},{n:"56 Diamonds",p:16500},{n:"86 Diamonds",p:25000},{n:"172 Diamonds",p:49900},{n:"257 Diamonds",p:74400},{n:"344 Diamonds",p:99000},{n:"429 Diamonds",p:122000},{n:"514 Diamonds",p:145000},{n:"600 Diamonds",p:168000},{n:"1050 Diamonds",p:286000},{n:"2195 Diamonds",p:572000},{n:"4390 Diamonds",p:1130000}]},
+  {name:"League of Legends: Wild Rift",slug:"league-of-legends-wild-rift",category:"MOBA",popular:false,nominals:[{n:"5 Wild Cores",p:15000},{n:"10 Wild Cores",p:29000},{n:"25 Wild Cores",p:70000},{n:"40 Wild Cores",p:109000},{n:"65 Wild Cores",p:169000},{n:"95 Wild Cores",p:239000},{n:"135 Wild Cores",p:329000},{n:"170 Wild Cores",p:399000},{n:"200 Wild Cores",p:479000},{n:"350 Wild Cores",p:799000},{n:"500 Wild Cores",p:1099000}]},
+  {name:"Arena of Valor",slug:"arena-of-valor",category:"MOBA",popular:false,nominals:[{n:"90 Vouchers",p:15000},{n:"230 Vouchers",p:38000},{n:"470 Vouchers",p:75000},{n:"700 Vouchers",p:109000},{n:"950 Vouchers",p:149000},{n:"1200 Vouchers",p:185000},{n:"1900 Vouchers",p:295000},{n:"2800 Vouchers",p:425000},{n:"4750 Vouchers",p:725000},{n:"7000 Vouchers",p:1050000},{n:"9500 Vouchers",p:1430000}]},
+  {name:"Heroes of the Storm",slug:"heroes-of-the-storm",category:"MOBA",popular:false,nominals:[{n:"10 Gems",p:15000},{n:"25 Gems",p:35000},{n:"50 Gems",p:65000},{n:"100 Gems",p:125000},{n:"150 Gems",p:179000},{n:"250 Gems",p:299000},{n:"375 Gems",p:439000},{n:"500 Gems",p:575000},{n:"750 Gems",p:849000},{n:"1000 Gems",p:1099000}]},
+  {name:"Pokémon UNITE",slug:"pokemon-unite",category:"MOBA",popular:false,nominals:[{n:"60 Aeos Gems",p:15000},{n:"325 Aeos Gems",p:79000},{n:"570 Aeos Gems",p:135000},{n:"985 Aeos Gems",p:229000},{n:"1620 Aeos Gems",p:365000},{n:"2160 Aeos Gems",p:475000},{n:"2700 Aeos Gems",p:589000},{n:"3560 Aeos Gems",p:765000},{n:"4340 Aeos Gems",p:925000},{n:"5280 Aeos Gems",p:1120000},{n:"6480 Aeos Gems",p:1350000}]},
+  // TACTICAL SHOOTER
+  {name:"Valorant",slug:"valorant",category:"Tactical Shooter",popular:true,nominals:[{n:"125 VP",p:15000},{n:"250 VP",p:29000},{n:"420 VP",p:49000},{n:"700 VP",p:79000},{n:"1000 VP",p:109000},{n:"1375 VP",p:149000},{n:"2000 VP",p:209000},{n:"2400 VP",p:249000},{n:"3200 VP",p:329000},{n:"4000 VP",p:399000},{n:"6150 VP",p:599000},{n:"8150 VP",p:799000}]},
+  // RPG
+  {name:"Genshin Impact",slug:"genshin-impact",category:"RPG",popular:true,nominals:[{n:"60 Genesis Crystals",p:16000},{n:"300+30 Genesis Crystals",p:79000},{n:"600+60 Genesis Crystals",p:159000},{n:"980+110 Genesis Crystals",p:249000},{n:"1280+170 Genesis Crystals",p:329000},{n:"1980+260 Genesis Crystals",p:479000},{n:"2480+400 Genesis Crystals",p:599000},{n:"3280+600 Genesis Crystals",p:799000},{n:"4480+1000 Genesis Crystals",p:1059000},{n:"6480+1600 Genesis Crystals",p:1599000},{n:"8080+2160 Genesis Crystals",p:1999000},{n:"12980+3480 Genesis Crystals",p:3199000}]},
+  {name:"Honkai: Star Rail",slug:"honkai-star-rail",category:"RPG",popular:true,nominals:[{n:"60 Oneiric Shards",p:16000},{n:"300+30 Oneiric Shards",p:79000},{n:"600+60 Oneiric Shards",p:159000},{n:"980+110 Oneiric Shards",p:249000},{n:"1280+170 Oneiric Shards",p:329000},{n:"1980+260 Oneiric Shards",p:479000},{n:"2480+400 Oneiric Shards",p:599000},{n:"3280+600 Oneiric Shards",p:799000},{n:"4480+1000 Oneiric Shards",p:1059000},{n:"6480+1600 Oneiric Shards",p:1599000},{n:"8080+2160 Oneiric Shards",p:1999000},{n:"12980+3480 Oneiric Shards",p:3199000}]},
+  {name:"Honkai Impact 3rd",slug:"honkai-impact-3rd",category:"RPG",popular:false,nominals:[{n:"60 Crystals",p:16000},{n:"300+30 Crystals",p:79000},{n:"600+60 Crystals",p:159000},{n:"980+110 Crystals",p:249000},{n:"1980+260 Crystals",p:479000},{n:"2480+400 Crystals",p:599000},{n:"3280+600 Crystals",p:799000},{n:"4480+1000 Crystals",p:1059000},{n:"6480+1600 Crystals",p:1599000},{n:"8080+2160 Crystals",p:1999000},{n:"12980+3480 Crystals",p:3199000}]},
+  {name:"Wuthering Waves",slug:"wuthering-waves",category:"RPG",popular:false,nominals:[{n:"60 Astrite",p:16000},{n:"300+30 Astrite",p:79000},{n:"600+60 Astrite",p:159000},{n:"980+110 Astrite",p:249000},{n:"1980+260 Astrite",p:479000},{n:"2480+400 Astrite",p:599000},{n:"3280+600 Astrite",p:799000},{n:"4480+1000 Astrite",p:1059000},{n:"6480+1600 Astrite",p:1599000},{n:"8080+2160 Astrite",p:1999000},{n:"12980+3480 Astrite",p:3199000}]},
+  {name:"Zenless Zone Zero",slug:"zenless-zone-zero",category:"RPG",popular:false,nominals:[{n:"60 Polychrome",p:16000},{n:"300+30 Polychrome",p:79000},{n:"600+60 Polychrome",p:159000},{n:"980+110 Polychrome",p:249000},{n:"1980+260 Polychrome",p:479000},{n:"2480+400 Polychrome",p:599000},{n:"3280+600 Polychrome",p:799000},{n:"4480+1000 Polychrome",p:1059000},{n:"6480+1600 Polychrome",p:1599000},{n:"8080+2160 Polychrome",p:1999000},{n:"12980+3480 Polychrome",p:3199000}]},
+  {name:"Tower of Fantasy",slug:"tower-of-fantasy",category:"RPG",popular:false,nominals:[{n:"60 Dark Crystals",p:16000},{n:"300+30 Dark Crystals",p:79000},{n:"600+60 Dark Crystals",p:159000},{n:"980+110 Dark Crystals",p:249000},{n:"1980+260 Dark Crystals",p:479000},{n:"3280+600 Dark Crystals",p:799000},{n:"4480+1000 Dark Crystals",p:1059000},{n:"6480+1600 Dark Crystals",p:1599000},{n:"8080+2160 Dark Crystals",p:1999000},{n:"12980+3480 Dark Crystals",p:3199000}]},
+  {name:"Punishing: Gray Raven",slug:"punishing-gray-raven",category:"RPG",popular:false,nominals:[{n:"60 Black Gold",p:16000},{n:"300+30 Black Gold",p:79000},{n:"600+60 Black Gold",p:159000},{n:"980+110 Black Gold",p:249000},{n:"1980+260 Black Gold",p:479000},{n:"3280+600 Black Gold",p:799000},{n:"6480+1600 Black Gold",p:1599000},{n:"8080+2160 Black Gold",p:1999000},{n:"12980+3480 Black Gold",p:3199000}]},
+  {name:"Arknights",slug:"arknights",category:"RPG",popular:false,nominals:[{n:"6 Originium Prime",p:16000},{n:"18 Originium Prime",p:49000},{n:"30 Originium Prime",p:79000},{n:"50 Originium Prime",p:129000},{n:"98 Originium Prime",p:249000},{n:"148 Originium Prime",p:379000},{n:"198 Originium Prime",p:479000},{n:"248 Originium Prime",p:599000},{n:"328 Originium Prime",p:799000},{n:"498 Originium Prime",p:1199000},{n:"648 Originium Prime",p:1599000}]},
+  {name:"Fate/Grand Order",slug:"fate-grand-order",category:"RPG",popular:false,nominals:[{n:"1 Saint Quartz",p:17000},{n:"5 Saint Quartz",p:83000},{n:"10 Saint Quartz",p:159000},{n:"16 Saint Quartz",p:255000},{n:"23 Saint Quartz",p:369000},{n:"33 Saint Quartz",p:499000},{n:"44 Saint Quartz",p:649000},{n:"55 Saint Quartz",p:799000},{n:"80 Saint Quartz",p:1099000},{n:"100 Saint Quartz",p:1299000},{n:"167 Saint Quartz",p:1599000}]},
+  {name:"Epic Seven",slug:"epic-seven",category:"RPG",popular:false,nominals:[{n:"100 Skystones",p:16000},{n:"300 Skystones",p:47000},{n:"520 Skystones",p:79000},{n:"750 Skystones",p:115000},{n:"1050 Skystones",p:155000},{n:"1700 Skystones",p:245000},{n:"2800 Skystones",p:395000},{n:"3700 Skystones",p:519000},{n:"5400 Skystones",p:745000},{n:"7200 Skystones",p:985000},{n:"9500 Skystones",p:1290000},{n:"11000 Skystones",p:1470000}]},
+  {name:"Summoners War",slug:"summoners-war",category:"RPG",popular:false,nominals:[{n:"100 Mana",p:16000},{n:"300 Mana",p:47000},{n:"500 Mana",p:77000},{n:"700 Mana",p:107000},{n:"1200 Mana",p:175000},{n:"1800 Mana",p:262000},{n:"2500 Mana",p:349000},{n:"3500 Mana",p:479000},{n:"5000 Mana",p:685000},{n:"7000 Mana",p:949000},{n:"12500 Mana",p:1599000}]},
+  {name:"Azur Lane",slug:"azur-lane",category:"RPG",popular:false,nominals:[{n:"100 Gems",p:16000},{n:"300 Gems",p:47000},{n:"600 Gems",p:79000},{n:"1000 Gems",p:129000},{n:"1200 Gems",p:155000},{n:"1800 Gems",p:229000},{n:"2500 Gems",p:309000},{n:"3500 Gems",p:429000},{n:"5000 Gems",p:599000},{n:"7500 Gems",p:879000},{n:"10000 Gems",p:1150000}]},
+  {name:"Girls' Frontline",slug:"girls-frontline",category:"RPG",popular:false,nominals:[{n:"100 Gems",p:16000},{n:"300 Gems",p:47000},{n:"600 Gems",p:79000},{n:"1000 Gems",p:129000},{n:"1200 Gems",p:155000},{n:"1800 Gems",p:229000},{n:"2500 Gems",p:309000},{n:"5000 Gems",p:599000},{n:"7500 Gems",p:879000},{n:"10000 Gems",p:1150000}]},
+  {name:"NARUTO Mobile",slug:"naruto-mobile",category:"RPG",popular:false,nominals:[{n:"100 Coins",p:16000},{n:"300 Coins",p:47000},{n:"500 Coins",p:77000},{n:"1000 Coins",p:149000},{n:"1500 Coins",p:219000},{n:"2000 Coins",p:289000},{n:"3000 Coins",p:419000},{n:"5000 Coins",p:699000},{n:"7500 Coins",p:1019000},{n:"10000 Coins",p:1350000}]},
+  {name:"Dragon Ball Legends",slug:"dragon-ball-legends",category:"RPG",popular:false,nominals:[{n:"25 Chrono Crystals",p:16000},{n:"60 Chrono Crystals",p:37000},{n:"130 Chrono Crystals",p:79000},{n:"210 Chrono Crystals",p:129000},{n:"340 Chrono Crystals",p:199000},{n:"500 Chrono Crystals",p:289000},{n:"700 Chrono Crystals",p:389000},{n:"950 Chrono Crystals",p:529000},{n:"1400 Chrono Crystals",p:749000},{n:"2100 Chrono Crystals",p:1099000},{n:"3500 Chrono Crystals",p:1599000}]},
+  // STRATEGY
+  {name:"Clash of Clans",slug:"clash-of-clans",category:"Strategy",popular:true,nominals:[{n:"80 Gems",p:19000},{n:"170 Gems",p:39000},{n:"500 Gems",p:99000},{n:"800 Gems",p:159000},{n:"1200 Gems",p:249000},{n:"1700 Gems",p:349000},{n:"2500 Gems",p:489000},{n:"3500 Gems",p:679000},{n:"5000 Gems",p:929000},{n:"6500 Gems",p:1199000},{n:"10000 Gems",p:1799000},{n:"14000 Gems",p:2399000}]},
+  {name:"Clash Royale",slug:"clash-royale",category:"Strategy",popular:false,nominals:[{n:"80 Gems",p:19000},{n:"170 Gems",p:39000},{n:"500 Gems",p:99000},{n:"800 Gems",p:159000},{n:"1200 Gems",p:249000},{n:"1700 Gems",p:349000},{n:"2500 Gems",p:489000},{n:"3500 Gems",p:679000},{n:"5000 Gems",p:929000},{n:"6500 Gems",p:1199000},{n:"10000 Gems",p:1799000},{n:"14000 Gems",p:2399000}]},
+  {name:"Rise of Kingdoms",slug:"rise-of-kingdoms",category:"Strategy",popular:false,nominals:[{n:"200 Gems",p:15000},{n:"600 Gems",p:41000},{n:"1200 Gems",p:79000},{n:"1800 Gems",p:115000},{n:"2500 Gems",p:159000},{n:"5000 Gems",p:309000},{n:"7500 Gems",p:449000},{n:"10000 Gems",p:599000},{n:"20000 Gems",p:1149000},{n:"35000 Gems",p:1949000},{n:"50000 Gems",p:2499000}]},
+  {name:"Lords Mobile",slug:"lords-mobile",category:"Strategy",popular:false,nominals:[{n:"200 Gems",p:16000},{n:"500 Gems",p:39000},{n:"1000 Gems",p:77000},{n:"1800 Gems",p:135000},{n:"2600 Gems",p:189000},{n:"3800 Gems",p:275000},{n:"5000 Gems",p:355000},{n:"8000 Gems",p:565000},{n:"13000 Gems",p:889000},{n:"18000 Gems",p:1199000},{n:"26000 Gems",p:1699000}]},
+  {name:"Guns of Glory",slug:"guns-of-glory",category:"Strategy",popular:false,nominals:[{n:"1000 Gold",p:16000},{n:"2500 Gold",p:39000},{n:"5000 Gold",p:77000},{n:"10000 Gold",p:149000},{n:"15000 Gold",p:219000},{n:"25000 Gold",p:355000},{n:"35000 Gold",p:479000},{n:"50000 Gold",p:679000},{n:"75000 Gold",p:989000},{n:"100000 Gold",p:1290000}]},
+  {name:"Evony",slug:"evony",category:"Strategy",popular:false,nominals:[{n:"100 Gems",p:16000},{n:"250 Gems",p:39000},{n:"500 Gems",p:75000},{n:"1000 Gems",p:145000},{n:"1500 Gems",p:219000},{n:"2500 Gems",p:349000},{n:"5000 Gems",p:675000},{n:"7500 Gems",p:989000},{n:"10000 Gems",p:1290000}]},
+  {name:"King of Kings",slug:"king-of-kings",category:"Strategy",popular:false,nominals:[{n:"100 Diamonds",p:15000},{n:"250 Diamonds",p:37000},{n:"500 Diamonds",p:73000},{n:"1000 Diamonds",p:142000},{n:"1500 Diamonds",p:213000},{n:"2500 Diamonds",p:342000},{n:"3500 Diamonds",p:472000},{n:"5000 Diamonds",p:662000},{n:"7500 Diamonds",p:969000},{n:"10000 Diamonds",p:1270000}]},
+  {name:"Rise of Nowlin",slug:"rise-of-nowlin",category:"Strategy",popular:false,nominals:[{n:"100 Gems",p:15000},{n:"250 Gems",p:37000},{n:"500 Gems",p:73000},{n:"1000 Gems",p:142000},{n:"1500 Gems",p:213000},{n:"2500 Gems",p:342000},{n:"3500 Gems",p:472000},{n:"5000 Gems",p:662000},{n:"7500 Gems",p:969000},{n:"10000 Gems",p:1270000}]},
+  // MMORPG
+  {name:"Ragnarok M: Eternal Love",slug:"ragnarok-m-eternal-love",category:"MMORPG",popular:false,nominals:[{n:"60 BCC",p:15000},{n:"120 BCC",p:29000},{n:"300 BCC",p:73000},{n:"500 BCC",p:119000},{n:"600 BCC",p:142000},{n:"900 BCC",p:209000},{n:"1200 BCC",p:279000},{n:"1800 BCC",p:409000},{n:"3000 BCC",p:685000},{n:"4500 BCC",p:1019000},{n:"6000 BCC",p:1350000}]},
+  {name:"Tree of Savior",slug:"tree-of-savior",category:"MMORPG",popular:false,nominals:[{n:"100 TP",p:15000},{n:"250 TP",p:37000},{n:"500 TP",p:73000},{n:"1000 TP",p:142000},{n:"1500 TP",p:213000},{n:"2500 TP",p:342000},{n:"5000 TP",p:662000},{n:"7500 TP",p:969000},{n:"10000 TP",p:1270000}]},
+  {name:"Black Desert Mobile",slug:"black-desert-mobile",category:"MMORPG",popular:false,nominals:[{n:"100 Pearls",p:16000},{n:"250 Pearls",p:39000},{n:"500 Pearls",p:79000},{n:"1000 Pearls",p:155000},{n:"1500 Pearls",p:229000},{n:"2500 Pearls",p:379000},{n:"3500 Pearls",p:529000},{n:"5000 Pearls",p:739000},{n:"7500 Pearls",p:1079000},{n:"10000 Pearls",p:1430000}]},
+  {name:"Dragon Nest Mobile",slug:"dragon-nest-mobile",category:"MMORPG",popular:false,nominals:[{n:"100 Diamonds",p:15000},{n:"250 Diamonds",p:37000},{n:"500 Diamonds",p:73000},{n:"1000 Diamonds",p:142000},{n:"1500 Diamonds",p:213000},{n:"2500 Diamonds",p:342000},{n:"5000 Diamonds",p:662000},{n:"7500 Diamonds",p:969000},{n:"10000 Diamonds",p:1270000}]},
+  {name:"Lineage 2M",slug:"lineage-2m",category:"MMORPG",popular:false,nominals:[{n:"100 Diamonds",p:17000},{n:"250 Diamonds",p:41500},{n:"500 Diamonds",p:83000},{n:"1000 Diamonds",p:162000},{n:"1500 Diamonds",p:243000},{n:"2500 Diamonds",p:392000},{n:"3500 Diamonds",p:547000},{n:"5000 Diamonds",p:762000},{n:"7500 Diamonds",p:1109000},{n:"10000 Diamonds",p:1470000}]},
+  {name:"Lineage W",slug:"lineage-w",category:"MMORPG",popular:false,nominals:[{n:"100 Diamonds",p:17000},{n:"250 Diamonds",p:41500},{n:"500 Diamonds",p:83000},{n:"1000 Diamonds",p:162000},{n:"1500 Diamonds",p:243000},{n:"2500 Diamonds",p:392000},{n:"3500 Diamonds",p:547000},{n:"5000 Diamonds",p:762000},{n:"7500 Diamonds",p:1109000},{n:"10000 Diamonds",p:1470000}]},
+  {name:"Perfect World Mobile",slug:"perfect-world-mobile",category:"MMORPG",popular:false,nominals:[{n:"100 Gold",p:16000},{n:"250 Gold",p:39000},{n:"500 Gold",p:77000},{n:"1000 Gold",p:149000},{n:"1500 Gold",p:219000},{n:"2500 Gold",p:359000},{n:"5000 Gold",p:699000},{n:"7500 Gold",p:1019000},{n:"10000 Gold",p:1350000}]},
+  {name:"LifeAfter",slug:"lifeafter",category:"MMORPG",popular:false,nominals:[{n:"100 Gold",p:15000},{n:"250 Gold",p:37000},{n:"500 Gold",p:73000},{n:"1000 Gold",p:142000},{n:"1500 Gold",p:213000},{n:"2500 Gold",p:342000},{n:"5000 Gold",p:662000},{n:"7500 Gold",p:969000},{n:"10000 Gold",p:1270000}]},
+  // ACTION
+  {name:"Brawl Stars",slug:"brawl-stars",category:"Action",popular:false,nominals:[{n:"30 Gems",p:15000},{n:"50 Gems",p:24000},{n:"80 Gems",p:38000},{n:"120 Gems",p:55000},{n:"170 Gems",p:79000},{n:"270 Gems",p:115000},{n:"380 Gems",p:159000},{n:"560 Gems",p:229000},{n:"800 Gems",p:319000},{n:"1100 Gems",p:439000},{n:"1700 Gems",p:639000},{n:"2500 Gems",p:929000}]},
+  {name:"Garena AOV",slug:"garena-aov",category:"Action",popular:false,nominals:[{n:"90 Vouchers",p:15000},{n:"150 Vouchers",p:25000},{n:"230 Vouchers",p:38000},{n:"350 Vouchers",p:57000},{n:"470 Vouchers",p:75000},{n:"700 Vouchers",p:109000},{n:"950 Vouchers",p:149000},{n:"1900 Vouchers",p:295000},{n:"2800 Vouchers",p:425000},{n:"4750 Vouchers",p:725000},{n:"7100 Vouchers",p:1069000}]},
+  {name:"Seven Knights 2",slug:"seven-knights-2",category:"Action",popular:false,nominals:[{n:"100 Rubies",p:16000},{n:"250 Rubies",p:39000},{n:"500 Rubies",p:77000},{n:"1000 Rubies",p:149000},{n:"1500 Rubies",p:219000},{n:"2500 Rubies",p:359000},{n:"5000 Rubies",p:699000},{n:"7500 Rubies",p:1019000},{n:"10000 Rubies",p:1350000}]},
+  {name:"Solo Leveling: Arise",slug:"solo-leveling-arise",category:"Action",popular:false,nominals:[{n:"60 Stones",p:16000},{n:"300+30 Stones",p:79000},{n:"600+60 Stones",p:159000},{n:"980+110 Stones",p:249000},{n:"1980+260 Stones",p:479000},{n:"3280+600 Stones",p:799000},{n:"6480+1600 Stones",p:1599000},{n:"8080+2160 Stones",p:1999000},{n:"12980+3480 Stones",p:3199000}]},
+  {name:"Dead by Daylight Mobile",slug:"dead-by-daylight-mobile",category:"Action",popular:false,nominals:[{n:"110 Auric Cells",p:15000},{n:"220 Auric Cells",p:29000},{n:"550 Auric Cells",p:73000},{n:"825 Auric Cells",p:107000},{n:"1100 Auric Cells",p:142000},{n:"1650 Auric Cells",p:209000},{n:"2200 Auric Cells",p:275000},{n:"3300 Auric Cells",p:409000},{n:"4700 Auric Cells",p:575000},{n:"7100 Auric Cells",p:849000},{n:"9500 Auric Cells",p:1120000}]},
+  {name:"Identity V",slug:"identity-v",category:"Action",popular:false,nominals:[{n:"60 Fragments",p:16000},{n:"120 Fragments",p:31000},{n:"300 Fragments",p:77000},{n:"480 Fragments",p:119000},{n:"680 Fragments",p:165000},{n:"980 Fragments",p:235000},{n:"1280 Fragments",p:305000},{n:"2000 Fragments",p:465000},{n:"3280 Fragments",p:769000},{n:"4880 Fragments",p:1119000},{n:"6480 Fragments",p:1490000}]},
+  {name:"Sky: Children of the Light",slug:"sky-children-of-the-light",category:"Action",popular:false,nominals:[{n:"6 Candles",p:16000},{n:"12 Candles",p:31000},{n:"24 Candles",p:59000},{n:"36 Candles",p:89000},{n:"50 Candles",p:119000},{n:"75 Candles",p:179000},{n:"100 Candles",p:229000},{n:"130 Candles",p:299000},{n:"160 Candles",p:359000},{n:"220 Candles",p:489000},{n:"300 Candles",p:659000}]},
+  {name:"Love Nikki",slug:"love-nikki",category:"Action",popular:false,nominals:[{n:"100 Diamonds",p:16000},{n:"250 Diamonds",p:39000},{n:"500 Diamonds",p:77000},{n:"1000 Diamonds",p:149000},{n:"1500 Diamonds",p:219000},{n:"2500 Diamonds",p:359000},{n:"5000 Diamonds",p:699000},{n:"7500 Diamonds",p:1019000},{n:"10000 Diamonds",p:1350000}]},
+  {name:"Saint Seiya: Awakening",slug:"saint-seiya-awakening",category:"Action",popular:false,nominals:[{n:"100 Gems",p:16000},{n:"250 Gems",p:39000},{n:"500 Gems",p:77000},{n:"1000 Gems",p:149000},{n:"1500 Gems",p:219000},{n:"2500 Gems",p:359000},{n:"5000 Gems",p:699000},{n:"7500 Gems",p:1019000},{n:"10000 Gems",p:1350000}]},
+  {name:"Heaven Burns Red",slug:"heaven-burns-red",category:"Action",popular:false,nominals:[{n:"120 Flowers",p:16000},{n:"240 Flowers",p:31000},{n:"600 Flowers",p:77000},{n:"1200 Flowers",p:149000},{n:"1800 Flowers",p:219000},{n:"2400 Flowers",p:289000},{n:"3600 Flowers",p:419000},{n:"6000 Flowers",p:699000},{n:"9000 Flowers",p:1019000},{n:"12000 Flowers",p:1350000}]},
+  // SPORTS
+  {name:"FIFA Mobile",slug:"fifa-mobile",category:"Sports",popular:false,nominals:[{n:"100 Points",p:16000},{n:"250 Points",p:39000},{n:"500 Points",p:77000},{n:"750 Points",p:113000},{n:"1050 Points",p:155000},{n:"1400 Points",p:205000},{n:"2200 Points",p:309000},{n:"3400 Points",p:469000},{n:"4600 Points",p:615000},{n:"8000 Points",p:1039000},{n:"12000 Points",p:1490000}]},
+  {name:"eFootball",slug:"efootball",category:"Sports",popular:false,nominals:[{n:"1050 eFootball Coins",p:16000},{n:"2600 eFootball Coins",p:38000},{n:"5500 eFootball Coins",p:77000},{n:"11500 eFootball Coins",p:155000},{n:"18000 eFootball Coins",p:235000},{n:"24000 eFootball Coins",p:309000},{n:"35000 eFootball Coins",p:449000},{n:"46000 eFootball Coins",p:579000},{n:"57000 eFootball Coins",p:699000},{n:"85000 eFootball Coins",p:1039000},{n:"125000 eFootball Coins",p:1499000}]},
+  {name:"NBA 2K Mobile",slug:"nba-2k-mobile",category:"Sports",popular:false,nominals:[{n:"1000 VC",p:16000},{n:"2500 VC",p:39000},{n:"5000 VC",p:77000},{n:"10000 VC",p:149000},{n:"15000 VC",p:219000},{n:"25000 VC",p:359000},{n:"37500 VC",p:529000},{n:"50000 VC",p:699000},{n:"75000 VC",p:1019000},{n:"100000 VC",p:1350000}]},
+  {name:"Asphalt 9: Legends",slug:"asphalt-9-legends",category:"Sports",popular:false,nominals:[{n:"80 Tokens",p:16000},{n:"200 Tokens",p:39000},{n:"400 Tokens",p:77000},{n:"600 Tokens",p:113000},{n:"800 Tokens",p:149000},{n:"1200 Tokens",p:219000},{n:"2000 Tokens",p:359000},{n:"3000 Tokens",p:519000},{n:"5000 Tokens",p:699000},{n:"7500 Tokens",p:1019000},{n:"10000 Tokens",p:1350000}]},
+  // CARD
+  {name:"Yu-Gi-Oh! Master Duel",slug:"yu-gi-oh-master-duel",category:"Card",popular:false,nominals:[{n:"100 Gems",p:16000},{n:"200 Gems",p:31000},{n:"300 Gems",p:46000},{n:"450 Gems",p:69000},{n:"600 Gems",p:89000},{n:"850 Gems",p:125000},{n:"1000 Gems",p:145000},{n:"1500 Gems",p:215000},{n:"2500 Gems",p:349000},{n:"4000 Gems",p:549000},{n:"6000 Gems",p:799000}]},
+  {name:"Marvel Snap",slug:"marvel-snap",category:"Card",popular:false,nominals:[{n:"1000 Gold",p:16000},{n:"2100 Gold",p:31000},{n:"3400 Gold",p:49000},{n:"4600 Gold",p:65000},{n:"7000 Gold",p:97000},{n:"10000 Gold",p:135000},{n:"15000 Gold",p:199000},{n:"21500 Gold",p:285000},{n:"30000 Gold",p:399000},{n:"38000 Gold",p:499000},{n:"47000 Gold",p:599000}]},
+  {name:"Hearthstone",slug:"hearthstone",category:"Card",popular:false,nominals:[{n:"2 Packs",p:16000},{n:"7 Packs",p:53000},{n:"15 Packs",p:109000},{n:"25 Packs",p:179000},{n:"40 Packs",p:285000},{n:"60 Packs",p:415000},{n:"80 Packs",p:549000},{n:"100 Packs",p:685000},{n:"150 Packs",p:979000},{n:"200 Packs",p:1299000}]},
+  {name:"Magic: The Gathering Arena",slug:"magic-the-gathering-arena",category:"Card",popular:false,nominals:[{n:"750 Gems",p:16000},{n:"1500 Gems",p:31000},{n:"2200 Gems",p:43000},{n:"3400 Gems",p:66000},{n:"4500 Gems",p:86000},{n:"7000 Gems",p:129000},{n:"10000 Gems",p:175000},{n:"15000 Gems",p:259000},{n:"23000 Gems",p:395000},{n:"35000 Gems",p:599000},{n:"50000 Gems",p:845000}]},
+  {name:"Auto Chess",slug:"auto-chess",category:"Card",popular:false,nominals:[{n:"100 Coins",p:16000},{n:"250 Coins",p:39000},{n:"500 Coins",p:77000},{n:"1000 Coins",p:149000},{n:"1500 Coins",p:219000},{n:"2500 Coins",p:359000},{n:"5000 Coins",p:699000},{n:"7500 Coins",p:1019000},{n:"10000 Coins",p:1350000}]},
+  // OTHER
+  {name:"Toram Online",slug:"toram-online",category:"Other",popular:false,nominals:[{n:"100 Spina",p:16000},{n:"250 Spina",p:39000},{n:"500 Spina",p:77000},{n:"1000 Spina",p:149000},{n:"1500 Spina",p:219000},{n:"2500 Spina",p:359000},{n:"5000 Spina",p:699000},{n:"7500 Spina",p:1019000},{n:"10000 Spina",p:1350000}]},
+  {name:"Elsword",slug:"elsword",category:"Other",popular:false,nominals:[{n:"1000 ED",p:16000},{n:"2500 ED",p:39000},{n:"5000 ED",p:77000},{n:"10000 ED",p:149000},{n:"15000 ED",p:219000},{n:"25000 ED",p:359000},{n:"50000 ED",p:699000},{n:"75000 ED",p:1019000},{n:"100000 ED",p:1350000}]},
+  {name:"Grand Chase",slug:"grand-chase",category:"Other",popular:false,nominals:[{n:"100 Points",p:16000},{n:"250 Points",p:39000},{n:"500 Points",p:77000},{n:"1000 Points",p:149000},{n:"1500 Points",p:219000},{n:"2500 Points",p:359000},{n:"5000 Points",p:699000},{n:"7500 Points",p:1019000},{n:"10000 Points",p:1350000}]},
+  {name:"Ultra Demons",slug:"ultra-demons",category:"Other",popular:false,nominals:[{n:"100 Gems",p:16000},{n:"250 Gems",p:39000},{n:"500 Gems",p:77000},{n:"1000 Gems",p:149000},{n:"1500 Gems",p:219000},{n:"2500 Gems",p:359000},{n:"5000 Gems",p:699000},{n:"7500 Gems",p:1019000},{n:"10000 Gems",p:1350000}]}
+];
+
+// ============================================================
+// UTILITIES
+// ============================================================
+function formatRupiah(n){return new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',minimumFractionDigits:0}).format(n)}
+function getMinPrice(g){return Math.min(...g.nominals.map(x=>x.p))}
+function getCatEmoji(c){return{MOBA:'🎮','Battle Royale':'🔫',RPG:'⚔️',Strategy:'🏰',MMORPG:'🌍',Action:'💥',Sports:'⚽',Card:'🃏','Tactical Shooter':'🎯',Other:'🎯'}[c]||'🎮'}
+function getCatColor(c){return{MOBA:'from-blue-600 to-blue-800','Battle Royale':'from-red-600 to-orange-700',RPG:'from-purple-600 to-purple-800',Strategy:'from-amber-600 to-amber-800',MMORPG:'from-emerald-600 to-emerald-800',Action:'from-rose-600 to-rose-800',Sports:'from-green-600 to-green-800',Card:'from-cyan-600 to-cyan-800','Tactical Shooter':'from-slate-700 to-slate-900',Other:'from-gray-600 to-gray-800'}[c]||'from-blue-600 to-blue-800'}
+
+// ============================================================
+// STATE
+// ============================================================
+let selectedCategory='Semua';
+let searchQuery='';
+
+// ============================================================
+// BANNER SLIDER
+// ============================================================
+const BANNERS=[
+  {img:'banners/mlbb-diamond-sale.png',title:'Mobile Legends Diamond Sale!',subtitle:'Diskon hingga 20% untuk semua nominal Diamond. Top up sekarang!'},
+  {img:'banners/pubg-mobile-uc.png',title:'PUBG Mobile UC Termurah',subtitle:'Top up UC mulai dari Rp15.000. Proses cepat dan aman!'},
+  {img:'banners/genshin-impact-promo.png',title:'Genshin Impact Promo Spesial',subtitle:'Genesis Crystal termurah! Bonus Welkin Moon eksklusif.'},
+  {img:'banners/free-fire-promo.png',title:'Free Fire Diamond & Membership',subtitle:'Membership Bulanan dan Diamond dengan harga terbaik!'}
+];
+let currentSlide=0;
+let slideTimer=null;
+
+function renderSlider(){
+  const el=document.getElementById('slider');
+  const dots=document.getElementById('sliderDots');
+  el.innerHTML=BANNERS.map((b,i)=>`
+    <div class="absolute inset-0 transition-opacity duration-500 ${i===0?'opacity-100':'opacity-0'}" data-slide="${i}">
+      <img src="${b.img}" alt="${b.title}" class="w-full h-full object-cover" onerror="this.parentElement.classList.add('bg-gradient-to-br','from-blue-600','to-indigo-800');this.style.display='none'">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+      <div class="absolute inset-0 flex items-center px-6 sm:px-10 md:px-16">
+        <div class="max-w-lg">
+          <span class="inline-flex items-center gap-1 bg-white/20 text-white border border-white/30 backdrop-blur-sm rounded-md mb-3 text-xs font-medium px-3 py-1"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> PROMO</span>
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 leading-tight drop-shadow-lg">${b.title}</h2>
+          <p class="text-sm sm:text-base text-white/90 mb-4 drop-shadow-md">${b.subtitle}</p>
+          <a href="#games" class="inline-flex items-center gap-2 bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/90 transition-colors">Top Up Sekarang <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  dots.innerHTML=BANNERS.map((_,i)=>`<button onclick="goToSlide(${i})" class="h-1.5 rounded-full transition-all duration-300 ${i===0?'w-6 bg-white':'w-1.5 bg-white/40 hover:bg-white/60'}" data-dot="${i}"></button>`).join('');
+}
+function goToSlide(i){
+  document.querySelectorAll('[data-slide]').forEach((s,idx)=>{s.classList.toggle('opacity-100',idx===i);s.classList.toggle('opacity-0',idx!==i)});
+  document.querySelectorAll('[data-dot]').forEach((d,idx)=>{d.classList.toggle('w-6',idx===i);d.classList.toggle('bg-white',idx===i);d.classList.toggle('w-1.5',idx!==i);d.classList.toggle('bg-white/40',idx!==i)});
+  currentSlide=i;
+}
+function nextSlide(){goToSlide((currentSlide+1)%BANNERS.length)}
+function prevSlide(){goToSlide((currentSlide-1+BANNERS.length)%BANNERS.length)}
+
+// ============================================================
+// GAME GRID
+// ============================================================
+function getCategories(){return['Semua',...Array.from(new Set(GAMES.map(g=>g.category)))]}
+
+function renderCategories(){
+  const cats=getCategories();
+  document.getElementById('categoryTabs').innerHTML=cats.map(c=>`
+    <button onclick="selectCategory('${c}')" class="px-4 py-2 rounded-lg text-sm font-medium transition-all shrink-0 ${selectedCategory===c?'bg-blue-600 text-white shadow-md shadow-blue-500/25':'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'}">
+      ${c!=='Semua'?`<span class="mr-1">${getCatEmoji(c)}</span>`:''}${c}
+    </button>
+  `).join('');
+}
+
+function createGameCard(g,idx){
+  const mp=getMinPrice(g);
+  const discount=g.nominals.some(x=>x.p<x.p); 
+  return`<div class="game-card bg-white rounded-xl overflow-hidden border-0 shadow-sm anim-fade-up" style="animation-delay:${Math.min(idx*0.03,0.5)}s">
+    <div class="relative h-28 sm:h-32 bg-gradient-to-br ${getCatColor(g.category)} flex items-center justify-center overflow-hidden">
+      <img src="games/${g.slug}.png" alt="${g.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="text-4xl sm:text-5xl filter drop-shadow-lg hidden">${getCatEmoji(g.category)}</span>
+      ${g.popular?'<span class="absolute top-2 right-2 bg-yellow-500 text-black text-[10px] font-bold px-2 py-0.5 rounded-md z-10 shadow-sm"><svg class="w-2.5 h-2.5 inline mr-0.5 -mt-px" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>POPULER</span>':''}
+      <div class="game-overlay absolute inset-0 bg-black/20 flex items-center justify-center z-10">
+        <span class="game-btn bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">Top Up</span>
+      </div>
+    </div>
+    <div class="p-3 sm:p-4">
+      <h3 class="font-semibold text-slate-900 text-sm sm:text-base leading-tight mb-1 line-clamp-2 min-h-[2.5rem]">${g.name}</h3>
+      <div class="flex items-center justify-between mt-2">
+        <div><span class="text-blue-600 text-sm font-bold">${formatRupiah(mp)}</span><p class="text-[11px] text-slate-400">Mulai dari</p></div>
+        <span class="text-[10px] bg-slate-100 text-slate-500 rounded px-2 py-0.5">${g.category}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function filterGames(){
+  searchQuery=document.getElementById('searchInput').value.trim().toLowerCase();
+  document.getElementById('clearSearch').classList.toggle('hidden',!searchQuery);
+  renderGameGrid();
+}
+
+function selectCategory(c){selectedCategory=c;renderCategories();renderGameGrid()}
+function clearSearchInput(){document.getElementById('searchInput').value='';searchQuery='';document.getElementById('clearSearch').classList.add('hidden');renderGameGrid()}
+
+function renderGameGrid(){
+  let games=[...GAMES];
+  if(selectedCategory!=='Semua')games=games.filter(g=>g.category===selectedCategory);
+  if(searchQuery)games=games.filter(g=>g.name.toLowerCase().includes(searchQuery));
+  
+  const popular=games.filter(g=>g.popular);
+  const popSection=document.getElementById('popularSection');
+  const popGrid=document.getElementById('popularGrid');
+  const allGrid=document.getElementById('allGamesGrid');
+  const noResults=document.getElementById('noResults');
+  const title=document.getElementById('allGamesTitle');
+  
+  // Popular section only when no filter/search
+  if(!searchQuery&&selectedCategory==='Semua'&&popular.length>0){
+    popSection.classList.remove('hidden');
+    popGrid.innerHTML=popular.map((g,i)=>createGameCard(g,i)).join('');
+  }else{
+    popSection.classList.add('hidden');
+  }
+  
+  title.textContent=searchQuery?`Hasil Pencarian (${games.length})`:`Semua Game (${games.length})`;
+  
+  if(games.length>0){
+    allGrid.innerHTML=games.map((g,i)=>createGameCard(g,i)).join('');
+    noResults.classList.add('hidden');
+  }else{
+    allGrid.innerHTML='';
+    noResults.classList.remove('hidden');
+  }
+}
+
+// ============================================================
+// SOCIAL PROOF NOTIFICATIONS
+// ============================================================
+const FAKE_NAMES=['Arya','Rizky','Dimas','Farel','Naufal','Bayu','Kenzo','Satria','Galang','Hafiz','Keisha','Zahra','Nadia','Aisyah','Dinda','Putri','Salma','Luna','Cinta','Rara','Joko','Budi','Andi','Eko','Firman','Gilang','Haris','Irfan','Kemal','Lukman','Maya','Sari','Dewi','Rina','Ani','Wulan','Fitri','Indah','Lestari','Novia','Reza','Tio','Vino','Yoga','Zaki','Adit','Bagus','Cahyo','Dafa','Edo','Fian'];
+const GAME_ITEMS=['Free Fire 100 Diamond','Free Fire Membership Bulanan','Free Fire Booyah Pass Premium','PUBG Mobile 60 UC','PUBG Mobile 325 UC','PUBG Mobile Royale Pass Elite','MLBB 222 Diamond','MLBB Starlight Member','MLBB 86 Diamond','Genshin Impact 3280 Genesis Crystal','Genshin Impact Welkin Moon','Honkai Star Rail 6480 Shard','Valorant 700 VP','Valorant Battlepass Premium','Call of Duty 400 CP','Clash of Clans 1200 Gems','Clash Royale 1200 Gems','Brawl Stars 300 Gems','Mobile Legends 444 Diamond','Free Fire 720 Diamond','PUBG Mobile 1800 UC','Genshin Impact 980 Genesis Crystal','Free Fire 3640 Diamond','MLBB 1344 Diamond'];
+
+function showNotification(){
+  const name=FAKE_NAMES[Math.floor(Math.random()*FAKE_NAMES.length)];
+  const item=GAME_ITEMS[Math.floor(Math.random()*GAME_ITEMS.length)];
+  const mins=Math.floor(Math.random()*30)+1;
+  const id=Math.random().toString(36).slice(2);
+  
+  const container=document.getElementById('notifications');
+  const el=document.createElement('div');
+  el.id='notif-'+id;
+  el.className='bg-white rounded-xl shadow-xl shadow-black/10 border border-slate-100 p-3 pointer-events-auto anim-slide-in';
+  el.innerHTML=`<div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center shrink-0">
+      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    </div>
+    <div class="flex-1 min-w-0">
+      <p class="text-sm font-semibold text-slate-900 truncate">${name}</p>
+      <p class="text-xs text-slate-500 truncate">baru saja membeli ${item}</p>
+      <p class="text-[10px] text-slate-400 mt-0.5">${mins} menit yang lalu</p>
+    </div>
+  </div>`;
+  container.appendChild(el);
+  
+  setTimeout(()=>{
+    const n=document.getElementById('notif-'+id);
+    if(n){n.classList.remove('anim-slide-in');n.classList.add('anim-slide-out');setTimeout(()=>n.remove(),300)}
+  },4000);
+  
+  // Keep max 3
+  while(container.children.length>3)container.removeChild(container.firstChild);
+}
+
+function scheduleNotification(){
+  const delay=Math.random()*4000+4000;
+  setTimeout(()=>{showNotification();scheduleNotification()},delay);
+}
+
+// ============================================================
+// LEADERBOARD
+// ============================================================
+function renderLeaderboard(){
+  const buyers=FAKE_NAMES.slice(0,10).map(name=>{
+    const item=GAME_ITEMS[Math.floor(Math.random()*GAME_ITEMS.length)];
+    const gameName=item.split(' ').slice(0,-2).join(' ')||item.split(' ')[0];
+    const count=Math.floor(Math.random()*8)+1;
+    const base=Math.floor(Math.random()*500000)+10000;
+    return{name,game:gameName,amount:base*count,count};
+  }).sort((a,b)=>b.amount-a.amount).map((b,i)=>({...b,rank:i+1}));
+  
+  buyers[0].amount=Math.floor(Math.random()*2000000)+1500000;
+  buyers[0].count=Math.floor(Math.random()*5)+5;
+  
+  const rankIcon=r=>r===1?'&#x1F451;':r===2?'&#x1F948;':r===3?'&#x1F949;':'#'+r;
+  const rankStyle=r=>r===1?'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-lg shadow-amber-500/30':r===2?'bg-gradient-to-r from-slate-300 to-slate-400 text-white shadow-lg shadow-slate-400/20':r===3?'bg-gradient-to-r from-orange-400 to-amber-600 text-white shadow-lg shadow-orange-500/20':'bg-slate-100 text-slate-600';
+  
+  document.getElementById('leaderboardBody').innerHTML=buyers.map(b=>`
+    <div class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shrink-0 ${rankStyle(b.rank)}">${rankIcon(b.rank)}</div>
+      <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold shrink-0">${b.name.charAt(0)}</div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-semibold text-slate-900 truncate">${b.name}</p>
+        <p class="text-xs text-slate-500 truncate">${b.game} &bull; ${b.count}x transaksi</p>
+      </div>
+      <div class="text-right shrink-0">
+        <p class="text-sm font-bold text-blue-600">${formatRupiah(b.amount)}</p>
+        <p class="text-[10px] text-slate-400">total hari ini</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// FAQ ACCORDION
+// ============================================================
+const FAQS=[
+  {q:'Bagaimana cara top up game di ZallTopUp?',a:'Pilih game yang ingin di-top up, masukkan ID pemain, pilih nominal yang diinginkan, lalu bayar via DANA. Pesanan akan diproses oleh admin dalam hitungan menit. Sangat mudah dan cepat!'},
+  {q:'Metode pembayaran apa saja yang tersedia?',a:'Saat ini ZallTopUp menerima pembayaran melalui DANA transfer. Cukup salin nomor DANA yang tersedia dan transfer sesuai nominal yang tertera. Pembayaran diproses otomatis.'},
+  {q:'Berapa lama proses top up setelah pembayaran?',a:'Proses top up biasanya 1-15 menit setelah pembayaran dikonfirmasi. Pada jam sibuk, maksimal 30 menit. Admin kami online 24 jam untuk memproses pesanan Anda.'},
+  {q:'Game apa saja yang tersedia di ZallTopUp?',a:'ZallTopUp menyediakan 65+ game populer: Mobile Legends, Free Fire, PUBG Mobile, Genshin Impact, Valorant, Honkai Star Rail, Clash of Clans, Brawl Stars, dan masih banyak lagi. Semua game tersedia dari harga Rp3.300.'},
+  {q:'Apakah ZallTopUp aman dan terpercaya?',a:'Ya! ZallTopUp adalah toko top up game terpercaya dengan ratusan transaksi berhasil setiap harinya. Kami menggunakan sistem pembayaran yang aman dan menjamin kepuasan pelanggan.'},
+  {q:'Bagaimana cara cek status pesanan?',a:'Gunakan menu "Cek Pesanan" di website ZallTopUp. Masukkan nama atau ID yang digunakan saat pemesanan untuk melihat status terkini pesanan Anda secara real-time.'},
+  {q:'Apa yang harus dilakukan jika top up belum masuk?',a:'Jika top up belum masuk setelah 30 menit, segera hubungi admin melalui WhatsApp dengan menyertakan Order ID. Tim kami akan membantu menyelesaikan masalah Anda dengan cepat.'}
+];
+let openFaq=null;
+
+function renderFAQ(){
+  document.getElementById('faqList').innerHTML=FAQS.map((f,i)=>`
+    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden transition-all duration-200 hover:border-blue-200 hover:shadow-sm">
+      <button onclick="toggleFaq(${i})" class="w-full flex items-center justify-between p-4 sm:p-5 text-left" aria-expanded="${openFaq===i}">
+        <span class="text-sm sm:text-base font-semibold text-slate-900 pr-4">${f.q}</span>
+        <svg class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${openFaq===i?'rotate-180 text-blue-600':''}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div id="faq-${i}" class="${openFaq===i?'':'hidden'}">
+        <div class="px-4 sm:px-5 pb-4 sm:pb-5">
+          <div class="border-t border-slate-100 mb-3"></div>
+          <p class="text-sm text-slate-600 leading-relaxed">${f.a}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleFaq(i){
+  openFaq=openFaq===i?null:i;
+  renderFAQ();
+}
+
+// ============================================================
+// HEADER SCROLL & MOBILE MENU
+// ============================================================
+function toggleMobileMenu(){
+  const menu=document.getElementById('mobileMenu');
+  const mi=document.getElementById('menuIcon');
+  const ci=document.getElementById('closeIcon');
+  const open=menu.classList.toggle('hidden');
+  mi.classList.toggle('hidden',!open);
+  ci.classList.toggle('hidden',open);
+}
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.add('hidden');
+  document.getElementById('menuIcon').classList.remove('hidden');
+  document.getElementById('closeIcon').classList.add('hidden');
+}
+
+window.addEventListener('scroll',()=>{
+  const h=document.getElementById('header');
+  if(window.scrollY>20){h.classList.add('bg-slate-900/95','backdrop-blur-md','shadow-lg','shadow-black/20');h.classList.remove('bg-gradient-to-r','from-slate-900','via-blue-950','to-slate-900')}
+  else{h.classList.remove('bg-slate-900/95','backdrop-blur-md','shadow-lg','shadow-black/20');h.classList.add('bg-gradient-to-r','from-slate-900','via-blue-950','to-slate-900')}
+});
+
+// ============================================================
+// COPY DANA
+// ============================================================
+function copyDana(){
+  navigator.clipboard.writeText('0851693007731').then(()=>{
+    const btn=document.getElementById('copyBtn');
+    document.getElementById('copyText').textContent='Tersalin!';
+    btn.classList.add('ring-2','ring-white/50');
+    setTimeout(()=>{document.getElementById('copyText').textContent='Salin';btn.classList.remove('ring-2','ring-white/50')},2000);
+  });
+}
+
+// ============================================================
+// ONLINE COUNT
+// ============================================================
+function updateOnlineCount(){
+  const base=847+Math.floor(Math.random()*100)-50;
+  document.getElementById('onlineCount').textContent=base+' online';
+  document.getElementById('onlineCountMobile').textContent=base+' user online';
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded',()=>{
+  renderSlider();
+  slideTimer=setInterval(nextSlide,5000);
+  renderCategories();
+  renderGameGrid();
+  renderLeaderboard();
+  renderFAQ();
+  
+  // Start social proof after 3s
+  setTimeout(()=>{showNotification();scheduleNotification()},3000);
+  
+  // Update online count periodically
+  setInterval(updateOnlineCount,30000);
+});
+</script>
+</body>
+</html>
