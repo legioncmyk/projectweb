@@ -92,6 +92,157 @@ function isImageUrl(str: string): boolean {
 
 const SESSION_ID = typeof crypto !== 'undefined' ? crypto.randomUUID() : Math.random().toString(36).slice(2)
 
+// ─── Social Proof Data ───────────────────────────────────
+const FAKE_NAMES = [
+  'Arya','Rizky','Dimas','Farel','Naufal','Bayu','Kenzo','Satria','Galang','Hafiz',
+  'Keisha','Zahra','Nadia','Aisyah','Dinda','Putri','Salma','Luna','Cinta','Rara',
+  'Joko','Budi','Andi','Eko','Firman','Gilang','Haris','Irfan','Kemal','Lukman',
+  'Maya','Sari','Dewi','Rina','Ani','Wulan','Fitri','Indah','Lestari','Novia',
+  'Reza','Tio','Vino','Yoga','Zaki','Adit','Bagus','Cahyo','Dafa','Edo','Fian'
+]
+const GAME_NOMINALS = [
+  'Free Fire 100 Diamond','Free Fire Membership Bulanan','Free Fire Booyah Pass Premium',
+  'PUBG Mobile 60 UC','PUBG Mobile 325 UC','PUBG Mobile Royale Pass Elite',
+  'MLBB 222 Diamond','MLBB Starlight Member','MLBB 86 Diamond',
+  'Genshin Impact 3280 Genesis Crystal','Genshin Impact Welkin Moon','Honkai Star Rail 6480 Shard',
+  'Valorant 700 VP','Valorant Battlepass Premium','Call of Duty 400 CP',
+  'Clash of Clans 1200 Gems','Clash Royale 1200 Gems','Brawl Stars 300 Gems',
+  'Mobile Legends 444 Diamond','Free Fire 720 Diamond','PUBG Mobile 1800 UC',
+  'Genshin Impact 980 Genesis Crystal','Free Fire 3640 Diamond','MLBB 1344 Diamond'
+]
+
+function generateFakePurchase() {
+  const name = FAKE_NAMES[Math.floor(Math.random() * FAKE_NAMES.length)]
+  const item = GAME_NOMINALS[Math.floor(Math.random() * GAME_NOMINALS.length)]
+  const minsAgo = Math.floor(Math.random() * 30) + 1
+  return { name, item, minsAgo, id: Math.random().toString(36).slice(2) }
+}
+
+// ─── Social Proof Notification Component ──────────────────
+function SocialProofNotification() {
+  const [notifications, setNotifications] = useState<Array<{id:string; name:string; item:string; minsAgo:number}>>([])
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
+
+  const addNotification = useCallback(() => {
+    const purchase = generateFakePurchase()
+    setNotifications(prev => [...prev.slice(-2), purchase]) // Keep max 3
+    setTimeout(() => {
+      setNotifications(prev => prev.filter(n => n.id !== purchase.id))
+    }, 4000)
+  }, [])
+
+  useEffect(() => {
+    const initial = setTimeout(() => {
+      addNotification()
+      const showNext = () => {
+        const delay = Math.random() * 4000 + 4000 // 4-8s
+        timerRef.current = setTimeout(() => {
+          addNotification()
+          showNext()
+        }, delay)
+      }
+      showNext()
+    }, 3000)
+    return () => { clearTimeout(initial); if (timerRef.current) clearTimeout(timerRef.current) }
+  }, [addNotification])
+
+  return (
+    <div className="fixed top-20 right-4 z-[60] flex flex-col gap-2 pointer-events-none" style={{ maxWidth: 320 }}>
+      <AnimatePresence>
+        {notifications.map(n => (
+          <motion.div
+            key={n.id}
+            initial={{ opacity: 0, x: 100, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 100, scale: 0.9 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="bg-white rounded-xl shadow-xl shadow-black/10 border border-slate-100 p-3 pointer-events-auto"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center shrink-0">
+                <CheckCircle className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-slate-900 truncate">{n.name}</p>
+                <p className="text-xs text-slate-500 truncate">baru saja membeli {n.item}</p>
+                <p className="text-[10px] text-slate-400 mt-0.5">{n.minsAgo} menit yang lalu</p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+// ─── Top Buyers Today Component ───────────────────────────
+function TopBuyersToday() {
+  const [buyers] = useState<Array<{rank:number; name:string; game:string; amount:number; count:number}>>(() => {
+    const topBuyers = FAKE_NAMES.slice(0, 10).map((name) => {
+      const item = GAME_NOMINALS[Math.floor(Math.random() * GAME_NOMINALS.length)]
+      const gameName = item.split(' ').slice(0, -2).join(' ') || item.split(' ')[0]
+      const count = Math.floor(Math.random() * 8) + 1
+      const basePrice = Math.floor(Math.random() * 500000) + 10000
+      return { rank: 0, name, game: gameName, amount: basePrice * count, count }
+    }).sort((a, b) => b.amount - a.amount).map((b, i) => ({ ...b, rank: i + 1 }))
+
+    topBuyers[0] = { ...topBuyers[0], amount: Math.floor(Math.random() * 2000000) + 1500000, count: Math.floor(Math.random() * 5) + 5 }
+    return topBuyers
+  })
+
+  const getRankStyle = (rank: number) => {
+    switch (rank) {
+      case 1: return 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-lg shadow-amber-500/30'
+      case 2: return 'bg-gradient-to-r from-slate-300 to-slate-400 text-white shadow-lg shadow-slate-400/20'
+      case 3: return 'bg-gradient-to-r from-orange-400 to-amber-600 text-white shadow-lg shadow-orange-500/20'
+      default: return 'bg-slate-100 text-slate-600'
+    }
+  }
+
+  const getRankIcon = (rank: number) => {
+    switch (rank) {
+      case 1: return '👑'
+      case 2: return '🥈'
+      case 3: return '🥉'
+      default: return `#${rank}`
+    }
+  }
+
+  return (
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-12">
+      <Card className="border-slate-200 shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-4 sm:p-5">
+          <div className="flex items-center gap-2">
+            <TrendingUp className="w-5 h-5 text-yellow-400" />
+            <h2 className="text-base sm:text-lg font-bold text-white">🏆 Top 10 Pembeli Terbanyak Hari Ini</h2>
+          </div>
+          <p className="text-xs text-slate-400 mt-1">Leaderboard pembelian real-time</p>
+        </div>
+        <div className="divide-y divide-slate-100">
+          {buyers.map(buyer => (
+            <div key={buyer.rank} className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors">
+              <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shrink-0 ${getRankStyle(buyer.rank)}`}>
+                {buyer.rank <= 3 ? getRankIcon(buyer.rank) : `#${buyer.rank}`}
+              </div>
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                {buyer.name.charAt(0)}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-slate-900 truncate">{buyer.name}</p>
+                <p className="text-xs text-slate-500 truncate">{buyer.game} • {buyer.count}x transaksi</p>
+              </div>
+              <div className="text-right shrink-0">
+                <p className="text-sm font-bold text-blue-600">{formatRupiah(buyer.amount)}</p>
+                <p className="text-[10px] text-slate-400">total hari ini</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
+    </section>
+  )
+}
+
 // ─── Ad Banner Component ───────────────────────────────────
 function AdBanner() {
   useEffect(() => {
@@ -396,13 +547,20 @@ function TopUpForm() {
   const [orderSuccess, setOrderSuccess] = useState(false)
   const [detailImgError, setDetailImgError] = useState(false)
   const [nominalCategory, setNominalCategory] = useState('all')
+  const [confirmDialog, setConfirmDialog] = useState(false)
+  const [orderId, setOrderId] = useState('')
+  const [countdown, setCountdown] = useState(0)
 
   if (!selectedGame) return null
 
   const handleSubmit = async () => {
     if (!playerName.trim() || !playerId.trim()) { toast.error('Nama dan ID pemain wajib diisi!'); return }
     if (!selectedNominal) { toast.error('Pilih nominal terlebih dahulu!'); return }
+    setConfirmDialog(true)
+  }
 
+  const confirmOrder = async () => {
+    setConfirmDialog(false)
     setSubmitLoading(true)
     try {
       const res = await fetch('/api/transactions', {
@@ -418,7 +576,9 @@ function TopUpForm() {
       })
       const data = await res.json()
       if (data.success) {
+        setOrderId(data.data.id)
         setOrderSuccess(true)
+        setCountdown(900) // 15 min countdown
         toast.success('Pesanan berhasil dibuat! Admin akan memproses pesanan kamu.')
       } else {
         toast.error(data.message || 'Gagal membuat pesanan')
@@ -437,34 +597,99 @@ function TopUpForm() {
 
   if (orderSuccess) {
     return (
-      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="max-w-lg mx-auto text-center py-20 px-4">
-        <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-10 h-10 text-green-600" />
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="max-w-lg mx-auto py-12 px-4">
+        {/* Success Header */}
+        <div className="text-center mb-6">
+          <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', delay: 0.1 }} className="w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mx-auto mb-4 shadow-xl shadow-green-500/30">
+            <CheckCircle className="w-10 h-10 text-white" />
+          </motion.div>
+          <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-2xl font-bold text-slate-900 mb-1">Pesanan Berhasil! 🎉</motion.h2>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-slate-500 text-sm">Admin akan segera memproses pesanan kamu</motion.p>
         </div>
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">Pesanan Berhasil Dibuat!</h2>
-        <p className="text-slate-500 mb-6">Pesanan kamu sedang menunggu konfirmasi dari admin. Silakan transfer ke nomor DANA di bawah ini:</p>
-        <Card className="border-slate-200 mb-6">
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3 mb-2">
-              <DanaLogo size={32} />
-              <div className="text-left">
-                <p className="font-bold text-slate-900">{settings.rekening || '085169300773'}</p>
-                <p className="text-xs text-slate-500">a.n. {settings.bankHolder || 'zallhostinger'}</p>
+
+        {/* Order ID */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="bg-slate-900 rounded-xl p-4 mb-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-[10px] text-slate-400 uppercase tracking-wider font-medium">Order ID</p>
+              <p className="text-sm font-mono text-white">{orderId.slice(0, 16).toUpperCase()}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-[10px] text-slate-400 uppercase tracking-wider font-medium">Status</p>
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                <p className="text-sm text-yellow-400 font-medium">Menunggu Pembayaran</p>
               </div>
-              <button onClick={copyDana} className="ml-auto p-2 rounded-lg hover:bg-slate-100 transition-colors">
-                {copiedDana ? <Check className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5 text-slate-400" />}
-              </button>
             </div>
-            <div className="bg-blue-50 rounded-lg p-3 text-left">
-              <p className="text-sm font-medium text-blue-900">Total Transfer:</p>
-              <p className="text-lg font-bold text-blue-600">{formatRupiah(selectedNominal?.price || 0)}</p>
-            </div>
-          </CardContent>
-        </Card>
-        <p className="text-sm text-slate-400 mb-6">Setelah transfer, tunggu admin konfirmasi. Cek status pesanan di menu &quot;Cek Pesanan&quot;.</p>
-        <Button onClick={() => { resetForm(); setOrderSuccess(false); setCurrentView('home') }} className="bg-blue-600 hover:bg-blue-700 text-white px-8">
-          Kembali ke Beranda
-        </Button>
+          </div>
+        </motion.div>
+
+        {/* Order Details */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+          <Card className="border-slate-200 mb-4">
+            <CardContent className="p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-slate-400">Game</span>
+                <span className="text-sm font-medium text-slate-900">{selectedGame.name}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-slate-400">Item</span>
+                <span className="text-sm font-medium text-slate-900">{selectedNominal?.name}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-slate-400">Pemain</span>
+                <span className="text-sm font-medium text-slate-900">{playerName} ({playerId})</span>
+              </div>
+              <Separator />
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-bold text-slate-900">Total Bayar</span>
+                <span className="text-lg font-bold text-blue-600">{formatRupiah(selectedNominal?.price || 0)}</span>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* Payment Section */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+          <Card className="border-blue-200 bg-gradient-to-b from-blue-50 to-white mb-4">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <DanaLogo size={28} />
+                <div>
+                  <p className="text-sm font-bold text-slate-900">Transfer via DANA</p>
+                  <p className="text-[10px] text-slate-500">Salin nomor di bawah lalu transfer</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between bg-white rounded-lg p-3 border border-blue-100">
+                <div>
+                  <p className="font-mono text-lg font-bold text-slate-900">{settings.rekening || '085169300773'}</p>
+                  <p className="text-[11px] text-slate-500">a.n. {settings.bankHolder || 'zallhostinger'}</p>
+                </div>
+                <button onClick={copyDana} className="flex items-center gap-1.5 px-4 py-2.5 bg-[#108EE9] hover:bg-[#0d7fd4] text-white rounded-lg text-sm font-medium transition-colors">
+                  {copiedDana ? <><Check className="w-4 h-4" /> Tersalin</> : <><Copy className="w-4 h-4" /> Salin</>}
+                </button>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* Info */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="space-y-3">
+          <div className="flex items-start gap-2 bg-amber-50 border border-amber-100 rounded-lg p-3">
+            <Clock className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+            <p className="text-xs text-amber-700">Transfer dalam waktu 15 menit. Jika melebihi batas waktu, pesanan akan otomatis dibatalkan.</p>
+          </div>
+          <div className="flex items-start gap-2 bg-blue-50 border border-blue-100 rounded-lg p-3">
+            <MessageSquare className="w-4 h-4 text-blue-500 mt-0.5 shrink-0" />
+            <p className="text-xs text-blue-700">Setelah transfer, cek status pesanan di menu &quot;Cek Pesanan&quot;. Hubungi admin via WhatsApp jika ada kendala.</p>
+          </div>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="mt-6">
+          <Button onClick={() => { resetForm(); setOrderSuccess(false); setOrderId(''); setCurrentView('home') }} className="w-full h-12 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25">
+            <ArrowLeft className="w-4 h-4 mr-2" /> Kembali ke Beranda
+          </Button>
+        </motion.div>
       </motion.div>
     )
   }
@@ -690,6 +915,37 @@ function TopUpForm() {
           </Button>
         </div>
       </div>
+
+      {/* Confirmation Dialog */}
+      <Dialog open={confirmDialog} onOpenChange={setConfirmDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2"><Package className="w-5 h-5 text-blue-600" /> Konfirmasi Pesanan</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-3 py-2">
+            <div className="bg-slate-50 rounded-lg p-3 space-y-2">
+              <div className="flex justify-between text-sm"><span className="text-slate-500">Game</span><span className="font-medium">{selectedGame.name}</span></div>
+              <div className="flex justify-between text-sm"><span className="text-slate-500">Item</span><span className="font-medium">{selectedNominal?.name}</span></div>
+              <div className="flex justify-between text-sm"><span className="text-slate-500">Pemain</span><span className="font-medium">{playerName}</span></div>
+              <div className="flex justify-between text-sm"><span className="text-slate-500">ID</span><span className="font-medium">{playerId}</span></div>
+              {playerServer && <div className="flex justify-between text-sm"><span className="text-slate-500">Server</span><span className="font-medium">{playerServer}</span></div>}
+            </div>
+            <div className="bg-blue-50 rounded-lg p-3 flex items-center justify-between">
+              <span className="text-sm font-bold text-slate-900">Total Pembayaran</span>
+              <span className="text-lg font-bold text-blue-600">{formatRupiah(selectedNominal?.price || 0)}</span>
+            </div>
+            <div className="bg-amber-50 border border-amber-100 rounded-lg p-3">
+              <p className="text-xs text-amber-700 flex items-start gap-1.5"><AlertCircle className="w-3.5 h-3.5 mt-0.5 shrink-0" /> Pastikan data pemain sudah benar. Pesanan yang sudah dibuat tidak dapat dibatalkan secara otomatis.</p>
+            </div>
+          </div>
+          <DialogFooter className="gap-2 sm:gap-0">
+            <Button variant="outline" onClick={() => setConfirmDialog(false)} className="flex-1">Batal</Button>
+            <Button onClick={confirmOrder} className="flex-1 bg-blue-600 hover:bg-blue-700">
+              <Send className="w-4 h-4 mr-1.5" /> Ya, Buat Pesanan
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </motion.div>
   )
 }
@@ -1418,6 +1674,9 @@ export default function HomePage() {
     <div className={`min-h-screen flex flex-col ${isAdminView ? 'bg-slate-950' : 'bg-slate-50'}`}>
       {!isAdminView && <Header />}
 
+      {/* Social Proof Notifications */}
+      {!isAdminView && <SocialProofNotification />}
+
       <main className={`flex-1 ${isAdminView ? '' : 'pt-20'}`}>
         <AnimatePresence mode="wait">
           {currentView === 'home' && (
@@ -1428,6 +1687,7 @@ export default function HomePage() {
                 <SocialAdBar />
               </div>
               <GameGrid />
+              <TopBuyersToday />
             </motion.div>
           )}
 
