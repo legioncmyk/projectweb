@@ -20,8 +20,10 @@ import {
   Check, Trash2, Edit3, Plus, Eye, EyeOff, Send, ArrowLeft,
   RefreshCw, Clock, CheckCircle, XCircle, AlertCircle, Loader2,
   Menu, X, Zap, Star, ChevronDown, Phone, Filter, Lock,
-  Wallet, QrCode, Ban, MessageSquare, DollarSign
+  Wallet, QrCode, Ban, MessageSquare, DollarSign, HelpCircle,
+  ChevronRight as ChevronRightIcon
 } from 'lucide-react'
+import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd, BreadcrumbJsonLd, ProductJsonLd } from '@/components/seo-jsonld'
 
 // ─── Utility ───────────────────────────────────────────────
 function formatRupiah(amount: number): string {
@@ -238,6 +240,125 @@ function TopBuyersToday() {
             </div>
           ))}
         </div>
+      </Card>
+    </section>
+  )
+}
+
+// ─── FAQ Section Component (SEO) ──────────────────────────
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
+
+  const faqs = [
+    {
+      q: 'Bagaimana cara top up game di ZallTopUp?',
+      a: 'Pilih game yang ingin di-top up, masukkan ID pemain, pilih nominal yang diinginkan, lalu bayar via DANA. Pesanan akan diproses oleh admin dalam hitungan menit. Sangat mudah dan cepat!',
+    },
+    {
+      q: 'Metode pembayaran apa saja yang tersedia?',
+      a: 'Saat ini ZallTopUp menerima pembayaran melalui DANA transfer. Cukup salin nomor DANA yang tersedia dan transfer sesuai nominal yang tertera. Pembayaran diproses otomatis.',
+    },
+    {
+      q: 'Berapa lama proses top up setelah pembayaran?',
+      a: 'Proses top up biasanya 1-15 menit setelah pembayaran dikonfirmasi. Pada jam sibuk, maksimal 30 menit. Admin kami online 24 jam untuk memproses pesanan Anda.',
+    },
+    {
+      q: 'Game apa saja yang tersedia di ZallTopUp?',
+      a: 'ZallTopUp menyediakan 65+ game populer: Mobile Legends, Free Fire, PUBG Mobile, Genshin Impact, Valorant, Honkai Star Rail, Clash of Clans, Brawl Stars, dan masih banyak lagi. Semua game tersedia dari harga Rp1.000.',
+    },
+    {
+      q: 'Apakah ZallTopUp aman dan terpercaya?',
+      a: 'Ya! ZallTopUp adalah toko top up game terpercaya dengan ratusan transaksi berhasil setiap harinya. Kami menggunakan sistem pembayaran yang aman dan menjamin kepuasan pelanggan.',
+    },
+    {
+      q: 'Bagaimana cara cek status pesanan?',
+      a: 'Gunakan menu "Cek Pesanan" di website ZallTopUp. Masukkan nama atau ID yang digunakan saat pemesanan untuk melihat status terkini pesanan Anda secara real-time.',
+    },
+    {
+      q: 'Apa yang harus dilakukan jika top up belum masuk?',
+      a: 'Jika top up belum masuk setelah 30 menit, segera hubungi admin melalui WhatsApp dengan menyertakan Order ID. Tim kami akan membantu menyelesaikan masalah Anda dengan cepat.',
+    },
+  ]
+
+  return (
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-3">
+          <HelpCircle className="w-4 h-4 text-blue-600" />
+          <span className="text-sm font-medium text-blue-700">FAQ</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Pertanyaan yang Sering Ditanyakan</h2>
+        <p className="text-slate-500 text-sm max-w-lg mx-auto">Temukan jawaban untuk pertanyaan umum seputar top up game di ZallTopUp</p>
+      </div>
+      <div className="space-y-3">
+        {faqs.map((faq, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-xl border border-slate-200 overflow-hidden transition-all duration-200 hover:border-blue-200 hover:shadow-sm"
+          >
+            <button
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              className="w-full flex items-center justify-between p-4 sm:p-5 text-left"
+              aria-expanded={openIndex === index}
+            >
+              <span className="text-sm sm:text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${openIndex === index ? 'rotate-180 text-blue-600' : ''}`} />
+            </button>
+            <AnimatePresence>
+              {openIndex === index && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+                    <Separator className="mb-3" />
+                    <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// ─── SEO Content Section (Trust Signals) ──────────────────
+function SEOContentSection() {
+  return (
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+      <Card className="border-slate-200 overflow-hidden">
+        <div className="bg-gradient-to-r from-slate-900 to-blue-950 p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">
+            ZallTopUp — Tempat Top Up Game Termurah dan Terpercaya di Indonesia
+          </h2>
+          <p className="text-slate-300 text-sm leading-relaxed">
+            ZallTopUp adalah situs top up game online terpercaya yang menyediakan layanan isi ulang diamond, UC, VP, dan item game lainnya dengan harga termurah. Tersedia untuk 65+ game populer termasuk Mobile Legends Bang Bang, Free Fire, PUBG Mobile, Valorant, Genshin Impact, Honkai Star Rail, Clash of Clans, dan masih banyak lagi.
+          </p>
+        </div>
+        <CardContent className="p-6 sm:p-8">
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-base font-bold text-slate-900 mb-2">Kenapa Memilih ZallTopUp?</h3>
+              <ul className="space-y-2 text-sm text-slate-600">
+                <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" /> Harga termurah mulai dari Rp1.000</li>
+                <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" /> Proses cepat 1-15 menit</li>
+                <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" /> Pembayaran mudah via DANA</li>
+                <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" /> Admin online 24 jam</li>
+                <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" /> 65+ game tersedia</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-slate-900 mb-2">Game Populer</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Top up Mobile Legends diamond, Free Fire diamond dan membership, PUBG Mobile UC, Valorant VP, Genshin Impact Genesis Crystal dan Welkin Moon, Honkai Star Rail Shard, Clash of Clans Gems, dan ratusan item game lainnya. Semua tersedia dengan harga bersaing dan proses instan.
+              </p>
+            </div>
+          </div>
+        </CardContent>
       </Card>
     </section>
   )
@@ -1677,17 +1798,31 @@ export default function HomePage() {
       {/* Social Proof Notifications */}
       {!isAdminView && <SocialProofNotification />}
 
+      {/* SEO Structured Data (JSON-LD) */}
+      {!isAdminView && (
+        <>
+          <WebsiteJsonLd />
+          <OrganizationJsonLd />
+          <FAQJsonLd />
+          <BreadcrumbJsonLd items={[{ name: 'Beranda', url: 'https://zalltopup.com' }, { name: 'Daftar Game', url: 'https://zalltopup.com/#games' }]} />
+        </>
+      )}
+
       <main className={`flex-1 ${isAdminView ? '' : 'pt-20'}`}>
         <AnimatePresence mode="wait">
           {currentView === 'home' && (
             <motion.div key="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
-                <HeroSlider />
-                <AdBanner />
-                <SocialAdBar />
-              </div>
-              <GameGrid />
-              <TopBuyersToday />
+              <article itemScope itemType="https://schema.org/WebPage">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
+                  <HeroSlider />
+                  <AdBanner />
+                  <SocialAdBar />
+                </div>
+                <GameGrid />
+                <TopBuyersToday />
+              </article>
+              <FAQSection />
+              <SEOContentSection />
             </motion.div>
           )}
 
